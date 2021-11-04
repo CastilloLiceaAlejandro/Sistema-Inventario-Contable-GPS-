@@ -15,6 +15,7 @@ namespace Sistema_Inventario_Contable_GPS
         public Admin()
         {
             InitializeComponent();
+            labelnombre.Text = Session.nombre;
         }
 
         private void Form1_Load(object sender, EventArgs e)

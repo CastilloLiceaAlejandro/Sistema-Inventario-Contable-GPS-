@@ -16,5 +16,31 @@ namespace Sistema_Inventario_Contable_GPS
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string usuario = txtUsuario.Text;
+            string password = txtPassword.Text;
+
+            try
+            {
+                Control ctrl = new Control();
+                string respuesta = ctrl.ctrlLogin(usuario, password);
+                if (respuesta.Length > 0)
+                {
+                    MessageBox.Show(respuesta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    VentanaCajero frm = new VentanaCajero();
+                    frm.Visible = true;
+                    this.Visible = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }
