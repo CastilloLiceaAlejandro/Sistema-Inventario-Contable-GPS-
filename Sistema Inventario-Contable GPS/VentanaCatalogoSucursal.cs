@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Inventario_Contable_GPS
 {
-    public partial class VentanaNuevoPuesto : Form
+    public partial class VentanaCatalogoSucursal : Form
     {
-        public VentanaNuevoPuesto()
+        public VentanaCatalogoSucursal()
         {
             InitializeComponent();
         }

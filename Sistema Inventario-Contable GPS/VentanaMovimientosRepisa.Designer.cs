@@ -33,6 +33,7 @@ namespace Sistema_Inventario_Contable_GPS
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,11 +55,11 @@ namespace Sistema_Inventario_Contable_GPS
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 12);
+            this.button3.Location = new System.Drawing.Point(12, 62);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(118, 46);
             this.button3.TabIndex = 15;
-            this.button3.Text = "Agregar";
+            this.button3.Text = "Agregar Producto";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -71,11 +72,21 @@ namespace Sistema_Inventario_Contable_GPS
             this.dataGridView1.Size = new System.Drawing.Size(585, 252);
             this.dataGridView1.TabIndex = 16;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(118, 44);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "Actualizar";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // VentanaMovimientosRepisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(930, 279);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -94,5 +105,6 @@ namespace Sistema_Inventario_Contable_GPS
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button5;
     }
 }

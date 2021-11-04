@@ -33,12 +33,45 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.2.6\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.2.6.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.2.6\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.27.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\Connector NET 8.0\Assemblies\v4.5.2\MySql.Data.dll</HintPath>
+      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +81,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.0.27\lib\net452\ZstdNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
@@ -59,11 +98,17 @@
       <DependentUpon>LogInUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo.cs" />
-    <Compile Include="RegistroDeUsuario.cs">
+    <Compile Include="VentanaCatalogoSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistroDeUsuario.Designer.cs">
-      <DependentUpon>RegistroDeUsuario.cs</DependentUpon>
+    <Compile Include="VentanaCatalogoSucursal.Designer.cs">
+      <DependentUpon>VentanaCatalogoSucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaNuevoUsuario.Designer.cs">
+      <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="Usuarios.cs" />
@@ -104,6 +149,12 @@
     </Compile>
     <Compile Include="VentanaCatalogoPuesto.Designer.cs">
       <DependentUpon>VentanaCatalogoPuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaNuevaSucursal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaNuevaSucursal.Designer.cs">
+      <DependentUpon>VentanaNuevaSucursal.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaCatalogoUsuarios.cs">
       <SubType>Form</SubType>
@@ -171,18 +222,6 @@
     <Compile Include="VentanaNuevoProducto.Designer.cs">
       <DependentUpon>VentanaNuevoProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevoPuesto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VentanaNuevoPuesto.Designer.cs">
-      <DependentUpon>VentanaNuevoPuesto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VentanaNuevoUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="VentanaNuevoUsuario.Designer.cs">
-      <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="VentanaNuevaMateriaPrima.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,8 +231,11 @@
     <EmbeddedResource Include="LogInUsuario.resx">
       <DependentUpon>LogInUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RegistroDeUsuario.resx">
-      <DependentUpon>RegistroDeUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaCatalogoSucursal.resx">
+      <DependentUpon>VentanaCatalogoSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaNuevoUsuario.resx">
+      <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentaCatalogoProducto.resx">
       <DependentUpon>VentaCatalogoProducto.cs</DependentUpon>
@@ -221,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaCatalogoPuesto.resx">
       <DependentUpon>VentanaCatalogoPuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaNuevaSucursal.resx">
+      <DependentUpon>VentanaNuevaSucursal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaCatalogoUsuarios.resx">
       <DependentUpon>VentanaCatalogoUsuarios.cs</DependentUpon>
@@ -255,15 +300,10 @@
     <EmbeddedResource Include="VentanaNuevoProducto.resx">
       <DependentUpon>VentanaNuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevoPuesto.resx">
-      <DependentUpon>VentanaNuevoPuesto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevoUsuario.resx">
-      <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VentanaNuevaMateriaPrima.resx">
       <DependentUpon>VentanaNuevaMateriaPrima.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

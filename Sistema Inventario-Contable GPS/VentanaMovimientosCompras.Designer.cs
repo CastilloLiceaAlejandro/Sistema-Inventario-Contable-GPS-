@@ -49,14 +49,14 @@ namespace Sistema_Inventario_Contable_GPS
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(613, 22);
+            this.textBox1.Location = new System.Drawing.Point(8, 199);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(191, 22);
+            this.textBox1.Size = new System.Drawing.Size(121, 22);
             this.textBox1.TabIndex = 1;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(659, 72);
+            this.button2.Location = new System.Drawing.Point(18, 227);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(102, 46);
             this.button2.TabIndex = 2;
@@ -88,14 +88,14 @@ namespace Sistema_Inventario_Contable_GPS
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(471, 276);
+            this.dataGridView1.Size = new System.Drawing.Size(673, 434);
             this.dataGridView1.TabIndex = 5;
             // 
             // VentanaMovimientosCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 309);
+            this.ClientSize = new System.Drawing.Size(821, 468);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
