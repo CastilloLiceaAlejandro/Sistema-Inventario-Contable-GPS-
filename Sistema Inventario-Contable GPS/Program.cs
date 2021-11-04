@@ -16,7 +16,7 @@ namespace Sistema_Inventario_Contable_GPS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Admin());
+            Application.Run(new LogInUsuario());
         }
     }
 }
