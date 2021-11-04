@@ -96,6 +96,7 @@ namespace Sistema_Inventario_Contable_GPS
             this.Controls.Add(this.txtUsuario);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogInUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogInUsuario";
             this.ResumeLayout(false);
             this.PerformLayout();

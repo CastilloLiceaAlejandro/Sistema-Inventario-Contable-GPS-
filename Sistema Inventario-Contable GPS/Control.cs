@@ -14,7 +14,7 @@ namespace Sistema_Inventario_Contable_GPS
             Modelo modelo = new Modelo();
             string respuesta = "";
 
-            if (string.IsNullOrEmpty(usuario.Usuario) || string.IsNullOrEmpty(usuario.Password) || string.IsNullOrEmpty(usuario.ConPassword) || string.IsNullOrEmpty(usuario.Nombre))
+            if (string.IsNullOrEmpty(usuario.Usuario) || string.IsNullOrEmpty(usuario.Password) || string.IsNullOrEmpty(usuario.ConPassword) || string.IsNullOrEmpty(usuario.Nombre) || usuario.Id_tipo == null)
             {
                 respuesta = "Debe llenar todos los campos";
             }
@@ -29,6 +29,7 @@ namespace Sistema_Inventario_Contable_GPS
                     else
                     {
                         usuario.Password = generarSHA1(usuario.Password);
+                        //usuario.Id_tipo = 2;
                         modelo.registro(usuario);
                     }
                 }

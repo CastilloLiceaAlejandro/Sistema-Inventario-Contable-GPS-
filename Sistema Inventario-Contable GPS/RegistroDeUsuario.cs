@@ -25,11 +25,31 @@ namespace Sistema_Inventario_Contable_GPS
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             Usuarios usuario = new Usuarios();
+
+            if (comboBox1.SelectedItem == null)
+            {
+
+            }
+            else { 
             usuario.Usuario = txtUsuario.Text;
             usuario.Password = txtPassword.Text;
             usuario.ConPassword = txtConPassword.Text;
             usuario.Nombre = txtNombre.Text;
 
+            if (comboBox1.SelectedIndex == 0)
+            {
+                usuario.Id_tipo = 1;
+            }
+            if (comboBox1.SelectedIndex == 1)
+            {
+                usuario.Id_tipo = 2;
+            }
+            if (comboBox1.SelectedIndex == 2)
+            {
+                usuario.Id_tipo = 3;
+            }
+
+            }
             try
             {
 
@@ -49,6 +69,11 @@ namespace Sistema_Inventario_Contable_GPS
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
