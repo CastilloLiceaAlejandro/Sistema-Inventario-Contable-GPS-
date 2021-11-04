@@ -39,7 +39,7 @@ namespace Sistema_Inventario_Contable_GPS
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(60, 54);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(169, 20);
             this.txtUsuario.TabIndex = 0;
@@ -47,8 +47,9 @@ namespace Sistema_Inventario_Contable_GPS
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(60, 136);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(169, 20);
             this.txtPassword.TabIndex = 1;
             // 
@@ -75,7 +76,7 @@ namespace Sistema_Inventario_Contable_GPS
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(112, 159);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(62, 33);
             this.button1.TabIndex = 4;
@@ -93,7 +94,7 @@ namespace Sistema_Inventario_Contable_GPS
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogInUsuario";
             this.Text = "LogInUsuario";
             this.ResumeLayout(false);

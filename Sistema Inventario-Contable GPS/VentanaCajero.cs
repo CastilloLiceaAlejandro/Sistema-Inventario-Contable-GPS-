@@ -16,5 +16,10 @@ namespace Sistema_Inventario_Contable_GPS
         {
             InitializeComponent();
         }
+
+        private void VentanaCajero_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

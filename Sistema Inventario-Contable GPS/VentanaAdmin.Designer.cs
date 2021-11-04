@@ -1,7 +1,7 @@
 ﻿
 namespace Sistema_Inventario_Contable_GPS
 {
-    partial class Admin
+    partial class VentanaAdmin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -84,14 +84,16 @@ namespace Sistema_Inventario_Contable_GPS
             // cambiarUsuarioToolStripMenuItem
             // 
             this.cambiarUsuarioToolStripMenuItem.Name = "cambiarUsuarioToolStripMenuItem";
-            this.cambiarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.cambiarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cambiarUsuarioToolStripMenuItem.Text = "Cambiar Usuario";
+            this.cambiarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.cambiarUsuarioToolStripMenuItem_Click);
             // 
             // cerrarSesionToolStripMenuItem1
             // 
             this.cerrarSesionToolStripMenuItem1.Name = "cerrarSesionToolStripMenuItem1";
-            this.cerrarSesionToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
+            this.cerrarSesionToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.cerrarSesionToolStripMenuItem1.Text = "Cerrar Sesión";
+            this.cerrarSesionToolStripMenuItem1.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem1_Click);
             // 
             // movimientosToolStripMenuItem
             // 
@@ -150,8 +152,9 @@ namespace Sistema_Inventario_Contable_GPS
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Usuarios";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // puestoToolStripMenuItem
             // 
@@ -252,7 +255,7 @@ namespace Sistema_Inventario_Contable_GPS
             this.labelnombre.TabIndex = 4;
             this.labelnombre.Text = "label2";
             // 
-            // Admin
+            // VentanaAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -263,7 +266,7 @@ namespace Sistema_Inventario_Contable_GPS
             this.Controls.Add(this.AdminmenuStrip1);
             this.MainMenuStrip = this.AdminmenuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Admin";
+            this.Name = "VentanaAdmin";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.AdminmenuStrip1.ResumeLayout(false);

@@ -15,6 +15,8 @@ namespace Sistema_Inventario_Contable_GPS
         public LogInUsuario()
         {
             InitializeComponent();
+
+          
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,10 +34,11 @@ namespace Sistema_Inventario_Contable_GPS
                 }
                 else
                 {
-                    VentanaCajero frm = new VentanaCajero();
+                    VentanaAdmin frm = new VentanaAdmin();
                     frm.Visible = true;
                     this.Visible = false;
                 }
+
             }
             catch (Exception ex)
             {
