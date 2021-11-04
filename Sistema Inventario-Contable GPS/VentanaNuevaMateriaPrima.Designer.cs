@@ -1,7 +1,7 @@
 ﻿
 namespace Sistema_Inventario_Contable_GPS
 {
-    partial class VetanaNuevaMateriaPrima
+    partial class VentanaNuevaMateriaPrima
     {
         /// <summary>
         /// Required designer variable.

@@ -96,11 +96,11 @@
     <Compile Include="VentanaCatalogoUsuarios.Designer.cs">
       <DependentUpon>VentanaCatalogoUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaMovientosVentas.cs">
+    <Compile Include="VentanaMovimientosVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaMovientosVentas.Designer.cs">
-      <DependentUpon>VentanaMovientosVentas.cs</DependentUpon>
+    <Compile Include="VentanaMovimientosVentas.Designer.cs">
+      <DependentUpon>VentanaMovimientosVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaMovimientosCompras.cs">
       <SubType>Form</SubType>
@@ -168,11 +168,11 @@
     <Compile Include="VentanaNuevoUsuario.Designer.cs">
       <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="VetanaNuevaMateriaPrima.cs">
+    <Compile Include="VentanaNuevaMateriaPrima.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VetanaNuevaMateriaPrima.Designer.cs">
-      <DependentUpon>VetanaNuevaMateriaPrima.cs</DependentUpon>
+    <Compile Include="VentanaNuevaMateriaPrima.Designer.cs">
+      <DependentUpon>VentanaNuevaMateriaPrima.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="LogInUsuario.resx">
       <DependentUpon>LogInUsuario.cs</DependentUpon>
@@ -207,8 +207,8 @@
     <EmbeddedResource Include="VentanaCatalogoUsuarios.resx">
       <DependentUpon>VentanaCatalogoUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaMovientosVentas.resx">
-      <DependentUpon>VentanaMovientosVentas.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaMovimientosVentas.resx">
+      <DependentUpon>VentanaMovimientosVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaMovimientosCompras.resx">
       <DependentUpon>VentanaMovimientosCompras.cs</DependentUpon>
@@ -243,8 +243,8 @@
     <EmbeddedResource Include="VentanaNuevoUsuario.resx">
       <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VetanaNuevaMateriaPrima.resx">
-      <DependentUpon>VetanaNuevaMateriaPrima.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaNuevaMateriaPrima.resx">
+      <DependentUpon>VentanaNuevaMateriaPrima.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
