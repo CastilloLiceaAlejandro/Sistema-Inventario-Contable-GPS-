@@ -44,7 +44,7 @@ namespace Sistema_Inventario_Contable_GPS
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(164, 29);
+            this.textBox1.Location = new System.Drawing.Point(149, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 0;
@@ -52,7 +52,7 @@ namespace Sistema_Inventario_Contable_GPS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 34);
+            this.label1.Location = new System.Drawing.Point(15, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 17);
             this.label1.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace Sistema_Inventario_Contable_GPS
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(164, 78);
+            this.textBox2.Location = new System.Drawing.Point(149, 40);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(473, 22);
             this.textBox2.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace Sistema_Inventario_Contable_GPS
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 81);
+            this.label2.Location = new System.Drawing.Point(43, 40);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 17);
             this.label2.TabIndex = 3;
@@ -77,7 +77,7 @@ namespace Sistema_Inventario_Contable_GPS
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 145);
+            this.label3.Location = new System.Drawing.Point(3, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 17);
             this.label3.TabIndex = 4;
@@ -85,7 +85,7 @@ namespace Sistema_Inventario_Contable_GPS
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(158, 140);
+            this.textBox3.Location = new System.Drawing.Point(149, 68);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 22);
             this.textBox3.TabIndex = 5;
@@ -93,7 +93,7 @@ namespace Sistema_Inventario_Contable_GPS
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(264, 145);
+            this.label4.Location = new System.Drawing.Point(255, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 17);
             this.label4.TabIndex = 6;
@@ -102,15 +102,16 @@ namespace Sistema_Inventario_Contable_GPS
             // textBox4
             // 
             this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(210, 215);
+            this.textBox4.Location = new System.Drawing.Point(560, 12);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(62, 22);
             this.textBox4.TabIndex = 7;
+            this.textBox4.Text = "0";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 215);
+            this.label5.Location = new System.Drawing.Point(380, 15);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 17);
             this.label5.TabIndex = 8;
@@ -118,25 +119,25 @@ namespace Sistema_Inventario_Contable_GPS
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(398, 140);
+            this.textBox5.Location = new System.Drawing.Point(384, 68);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(238, 22);
             this.textBox5.TabIndex = 9;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(419, 189);
+            this.button1.Location = new System.Drawing.Point(505, 96);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 48);
             this.button1.TabIndex = 10;
             this.button1.Text = "Guardar Materia Prima";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // VetanaNuevaMateriaPrima
+            // VentanaNuevaMateriaPrima
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 262);
+            this.ClientSize = new System.Drawing.Size(648, 156);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label5);
@@ -148,7 +149,7 @@ namespace Sistema_Inventario_Contable_GPS
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
-            this.Name = "VetanaNuevaMateriaPrima";
+            this.Name = "VentanaNuevaMateriaPrima";
             this.Text = "Nueva MateriaPrima";
             this.ResumeLayout(false);
             this.PerformLayout();

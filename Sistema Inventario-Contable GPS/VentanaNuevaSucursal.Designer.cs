@@ -103,7 +103,7 @@ namespace Sistema_Inventario_Contable_GPS
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(379, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(379, 31);
             this.toolStrip1.TabIndex = 21;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -119,9 +119,10 @@ namespace Sistema_Inventario_Contable_GPS
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(14, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 17);
+            this.label1.Size = new System.Drawing.Size(71, 17);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Id Sucursal:";
+            this.label1.Text = "Direccion:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // VentanaNuevaSucursal
             // 

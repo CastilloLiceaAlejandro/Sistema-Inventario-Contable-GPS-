@@ -53,8 +53,8 @@ namespace Sistema_Inventario_Contable_GPS
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Caracteristicas.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -335,15 +335,6 @@ namespace Sistema_Inventario_Contable_GPS
             this.tabPage2.Text = "Permisos";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(545, 31);
-            this.toolStrip1.TabIndex = 21;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
@@ -369,11 +360,24 @@ namespace Sistema_Inventario_Contable_GPS
             "Modificar Entradas y Salidas",
             "Borrar Entradas y Salidas",
             "Agregar Producto a Repisa",
-            "Leer Repisa"});
+            "Leer Repisa",
+            "Crear Sucursal",
+            "Modificar Sucursal",
+            "Leer Sucursal",
+            "Borrar Sucursal"});
             this.checkedListBox1.Location = new System.Drawing.Point(7, 7);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(500, 361);
             this.checkedListBox1.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(545, 25);
+            this.toolStrip1.TabIndex = 21;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // RegistroDeUsuario
             // 
