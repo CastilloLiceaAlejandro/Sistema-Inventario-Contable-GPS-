@@ -23,7 +23,7 @@ namespace Sistema_Inventario_Contable_GPS
                 this.entradasInventarioToolStripMenuItem.Visible = false;
                 this.salidaDeAlmacenToolStripMenuItem.Visible = false;
                 this.toolStripMenuItem1.Visible = false;
-                this.puestoToolStripMenuItem.Visible = false;
+                this.sucursalToolStripMenuItem.Visible = false;
                 this.usuariosToolStripMenuItem.Visible = false;
 
             }
@@ -35,7 +35,7 @@ namespace Sistema_Inventario_Contable_GPS
                 this.entradasInventarioToolStripMenuItem.Visible = false;
                 this.salidaDeAlmacenToolStripMenuItem.Visible = false;
                 this.toolStripMenuItem1.Visible = false;
-                this.puestoToolStripMenuItem.Visible = false;
+                this.sucursalToolStripMenuItem.Visible = false;
                 this.comprasToolStripMenuItem1.Visible = false;
                 this.ventasToolStripMenuItem1.Visible = false;
                 this.usuariosToolStripMenuItem.Visible = false;
