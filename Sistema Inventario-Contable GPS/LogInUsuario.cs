@@ -21,13 +21,13 @@ namespace Sistema_Inventario_Contable_GPS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
+            string usuariocorreo = txtUsuario.Text;
             string password = txtPassword.Text;
 
             try
             {
                 Control ctrl = new Control();
-                string respuesta = ctrl.ctrlLogin(usuario, password);
+                string respuesta = ctrl.ctrlLogin(usuariocorreo, password);
                 if (respuesta.Length > 0)
                 {
                     MessageBox.Show(respuesta, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);

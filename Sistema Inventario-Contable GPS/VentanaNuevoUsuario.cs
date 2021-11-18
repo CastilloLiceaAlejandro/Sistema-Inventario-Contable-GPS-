@@ -24,33 +24,59 @@ namespace Sistema_Inventario_Contable_GPS
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios();
+            Usuarios usuarionuevo = new Usuarios();
 
             if (comboBox1.SelectedItem == null)
             {
 
             }
-            else { 
-                usuario.Usuario = txtUsuario.Text;
-                usuario.Password = txtPassword.Text;
+            if (comboBox2.SelectedItem == null)
+            {
+
+            }
+            else {
+                usuarionuevo.Nombre = txtNombre.Text;
+                usuarionuevo.Edad = txtEdad.Text; 
+                usuarionuevo.Telefono = txtTelefono.Text;
+                usuarionuevo.Correo = txtCorreo.Text;
+                usuarionuevo.Password = txtPassword.Text;
+                usuarionuevo.ConPassword = txtConPassword.Text;
+
                 if (comboBox1.SelectedIndex == 0)
                 {
-                    usuario.Id_tipo = 1;
+                    usuarionuevo.Id_puesto = 1;
                 }
                 if (comboBox1.SelectedIndex == 1)
                 {
-                    usuario.Id_tipo = 2;
+                    usuarionuevo.Id_puesto = 2;
                 }
                 if (comboBox1.SelectedIndex == 2)
                 {
-                    usuario.Id_tipo = 3;
+                    usuarionuevo.Id_puesto = 3;
+                }
+
+                if (comboBox2.SelectedIndex == 0)
+                {
+                    usuarionuevo.Turno = "Matutino";
+                }
+                if (comboBox2.SelectedIndex == 1)
+                {
+                    usuarionuevo.Turno = "Vespertino";
+                }
+                if (comboBox2.SelectedIndex == 2)
+                {
+                    usuarionuevo.Turno = "Ambos";
+                }
+                if (comboBox2.SelectedIndex == 3)
+                {
+                    usuarionuevo.Turno = "Ninguno";
                 }
             }
 
             try
             {
                 Control control = new Control();
-                string respuesta = control.ctrlRegistro(usuario);
+                string respuesta = control.ctrlRegistro(usuarionuevo);
 
                 if (respuesta.Length > 0)
                 {
@@ -60,13 +86,27 @@ namespace Sistema_Inventario_Contable_GPS
                 {
                     MessageBox.Show("Usuario registrado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
-            catch (Exception ex)
+            }catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

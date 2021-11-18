@@ -112,12 +112,14 @@ namespace Sistema_Inventario_Contable_GPS
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
             this.comprasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.comprasToolStripMenuItem.Text = "Compras";
+            this.comprasToolStripMenuItem.Click += new System.EventHandler(this.comprasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // entradasInventarioToolStripMenuItem
             // 
@@ -131,12 +133,14 @@ namespace Sistema_Inventario_Contable_GPS
             this.salidaDeAlmacenToolStripMenuItem.Name = "salidaDeAlmacenToolStripMenuItem";
             this.salidaDeAlmacenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.salidaDeAlmacenToolStripMenuItem.Text = "Salida de Almacen";
+            this.salidaDeAlmacenToolStripMenuItem.Click += new System.EventHandler(this.salidaDeAlmacenToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem1
             // 
             this.productosToolStripMenuItem1.Name = "productosToolStripMenuItem1";
             this.productosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.productosToolStripMenuItem1.Text = "Repisa";
+            this.productosToolStripMenuItem1.Click += new System.EventHandler(this.productosToolStripMenuItem1_Click);
             // 
             // catalogoToolStripMenuItem
             // 
@@ -159,20 +163,23 @@ namespace Sistema_Inventario_Contable_GPS
             // materiaPrimaToolStripMenuItem
             // 
             this.materiaPrimaToolStripMenuItem.Name = "materiaPrimaToolStripMenuItem";
-            this.materiaPrimaToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.materiaPrimaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.materiaPrimaToolStripMenuItem.Text = "Materia prima";
+            this.materiaPrimaToolStripMenuItem.Click += new System.EventHandler(this.materiaPrimaToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.productoToolStripMenuItem.Text = "Producto";
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // sucursalToolStripMenuItem
             // 
             this.sucursalToolStripMenuItem.Name = "sucursalToolStripMenuItem";
-            this.sucursalToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.sucursalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sucursalToolStripMenuItem.Text = "Sucursal";
+            this.sucursalToolStripMenuItem.Click += new System.EventHandler(this.sucursalToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -229,7 +236,7 @@ namespace Sistema_Inventario_Contable_GPS
             // 
             this.AlertProdList.FormattingEnabled = true;
             this.AlertProdList.Location = new System.Drawing.Point(31, 54);
-            this.AlertProdList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AlertProdList.Margin = new System.Windows.Forms.Padding(2);
             this.AlertProdList.Name = "AlertProdList";
             this.AlertProdList.Size = new System.Drawing.Size(248, 17);
             this.AlertProdList.TabIndex = 2;
@@ -254,6 +261,7 @@ namespace Sistema_Inventario_Contable_GPS
             this.labelnombre.Size = new System.Drawing.Size(64, 13);
             this.labelnombre.TabIndex = 4;
             this.labelnombre.Text = "labelnombre";
+            this.labelnombre.Click += new System.EventHandler(this.labelnombre_Click);
             // 
             // VentanaAdmin
             // 
@@ -265,7 +273,7 @@ namespace Sistema_Inventario_Contable_GPS
             this.Controls.Add(this.AlertProdList);
             this.Controls.Add(this.AdminmenuStrip1);
             this.MainMenuStrip = this.AdminmenuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VentanaAdmin";
             this.Text = "Sistema Inventario-Contable";
             this.Load += new System.EventHandler(this.Form1_Load);

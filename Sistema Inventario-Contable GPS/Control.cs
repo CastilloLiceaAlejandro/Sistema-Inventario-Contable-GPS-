@@ -9,28 +9,27 @@ namespace Sistema_Inventario_Contable_GPS
 {
     class Control
     {
-        public string ctrlRegistro(Usuarios usuario)
+        public string ctrlRegistro(Usuarios usuarionuevo)
         {
             Modelo modelo = new Modelo();
             string respuesta = "";
 
-            if (string.IsNullOrEmpty(usuario.Usuario) || string.IsNullOrEmpty(usuario.Password) || string.IsNullOrEmpty(usuario.ConPassword) || string.IsNullOrEmpty(usuario.Nombre) || usuario.Id_tipo == null)
+            if (string.IsNullOrEmpty(usuarionuevo.Correo) || string.IsNullOrEmpty(usuarionuevo.Password) || string.IsNullOrEmpty(usuarionuevo.ConPassword) || string.IsNullOrEmpty(usuarionuevo.Nombre) || string.IsNullOrEmpty(usuarionuevo.Turno) || string.IsNullOrEmpty(usuarionuevo.Telefono) || string.IsNullOrEmpty(usuarionuevo.Edad))
             {
                 respuesta = "Debe llenar todos los campos";
             }
             else
             {
-                if (usuario.Password == usuario.ConPassword)
+                if (usuarionuevo.Password == usuarionuevo.ConPassword)
                 {
-                    if (modelo.existeUsuario(usuario.Usuario))
+                    if (modelo.existeUsuario(usuarionuevo.Correo))
                     {
                         respuesta = "El usuario ya existe";
                     }
                     else
                     {
-                        usuario.Password = generarSHA1(usuario.Password);
-                        //usuario.Id_tipo = 2;
-                        modelo.registro(usuario);
+                        usuarionuevo.Password = generarSHA1(usuarionuevo.Password);
+                        modelo.registro(usuarionuevo);
                     }
                 }
                 else
@@ -42,19 +41,19 @@ namespace Sistema_Inventario_Contable_GPS
 
         }
 
-        public string ctrlLogin(string usuario, string password)
+        public string ctrlLogin(string usuariocorreo, string password)
         {
             Modelo modelo = new Modelo();
             string respuesta = "";
             Usuarios datosUsuario = null;
 
-            if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(usuariocorreo) || string.IsNullOrEmpty(password))
             {
                 respuesta = "Debe llenar todos los campos";
             }
             else
             {
-                datosUsuario = modelo.porUsuario(usuario);
+                datosUsuario = modelo.porUsuario(usuariocorreo);
 
                 if (datosUsuario == null)
                 {
@@ -68,10 +67,15 @@ namespace Sistema_Inventario_Contable_GPS
                     }
                     else
                     {
-                        Session.id = datosUsuario.Id;
-                        Session.usuario = usuario;
-                        Session.nombre = datosUsuario.Nombre;
-                        Session.id_tipo = datosUsuario.Id_tipo;
+                        Session.idempleados = datosUsuario.IdEmpleados;
+                        Session.correo = usuariocorreo;
+                        Session.nombre = datosUsuario.Correo;
+                        Session.turno = datosUsuario.Turno;
+                        Session.id_puesto = datosUsuario.Id_puesto;
+                        Session.edad = datosUsuario.Edad;
+                        Session.telefono = datosUsuario.Telefono;
+
+
                     }
                 }
             }

@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace Sistema_Inventario_Contable_GPS
 {
-    public partial class VentanaAlmacenista : Form
+    public partial class VentanaCatalogoProducto : Form
     {
-        public VentanaAlmacenista()
+        public VentanaCatalogoProducto()
         {
             InitializeComponent();
         }
 
-        private void VentanaAlmacenista_Load(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            VentanaNuevoProducto frm = new VentanaNuevoProducto();
+            frm.Visible = true;
         }
     }
 }

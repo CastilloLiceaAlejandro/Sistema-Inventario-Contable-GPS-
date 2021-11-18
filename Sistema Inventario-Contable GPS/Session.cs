@@ -8,7 +8,7 @@ namespace Sistema_Inventario_Contable_GPS
 {
     class Session
     {
-        public static int id, id_tipo;
-        public static string usuario, nombre;
+        public static int idempleados, id_puesto;
+        public static string correo, nombre, turno, telefono, edad;
     }
 }

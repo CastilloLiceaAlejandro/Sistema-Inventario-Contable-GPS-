@@ -16,5 +16,11 @@ namespace Sistema_Inventario_Contable_GPS
         {
             InitializeComponent();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            VentanaNuevaMateriaPrima frm = new VentanaNuevaMateriaPrima();
+            frm.Visible = true;
+        }
     }
 }

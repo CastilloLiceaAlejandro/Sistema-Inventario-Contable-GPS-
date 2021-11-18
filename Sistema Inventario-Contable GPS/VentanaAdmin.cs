@@ -15,9 +15,14 @@ namespace Sistema_Inventario_Contable_GPS
         public VentanaAdmin()
         {
             InitializeComponent();
-            labelnombre.Text = Session.nombre;
 
-            if (Session.id_tipo == 2)
+            if (Session.id_puesto == 1)
+            {
+                labelnombre.Text = "Administrador";
+
+            }
+
+            if (Session.id_puesto == 2)
             {
                 this.comprasToolStripMenuItem.Visible = false;
                 this.entradasInventarioToolStripMenuItem.Visible = false;
@@ -26,9 +31,10 @@ namespace Sistema_Inventario_Contable_GPS
                 this.sucursalToolStripMenuItem.Visible = false;
                 this.usuariosToolStripMenuItem.Visible = false;
 
+                labelnombre.Text = "Cajero";
             }
 
-            if (Session.id_tipo == 3)
+            if (Session.id_puesto == 3)
             {
                 this.comprasToolStripMenuItem.Visible = false;
                 this.ventasToolStripMenuItem.Visible = false;
@@ -40,21 +46,23 @@ namespace Sistema_Inventario_Contable_GPS
                 this.ventasToolStripMenuItem1.Visible = false;
                 this.usuariosToolStripMenuItem.Visible = false;
 
+                labelnombre.Text = "Almacenista";
+
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (Session.id_tipo == 1)
+            if (Session.id_puesto == 1)
             {
                 this.Text = "Administrador";
             }
-            if (Session.id_tipo == 2)
+            if (Session.id_puesto == 2)
             {
                 this.Text = "Cajero";
 
             }
-            if (Session.id_tipo == 3)
+            if (Session.id_puesto == 3)
             {
                 this.Text = "Almacenista";
 
@@ -62,7 +70,8 @@ namespace Sistema_Inventario_Contable_GPS
         }
         private void entradasInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            VentanaMovimientosEntradaAlmacen frm = new VentanaMovimientosEntradaAlmacen();
+            frm.Visible = true;
         }
 
         private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
@@ -104,5 +113,51 @@ namespace Sistema_Inventario_Contable_GPS
             frm.Visible = true;
         }
 
+        private void labelnombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaMovimientosCompras frm = new VentanaMovimientosCompras();
+            frm.Visible = true;
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaMovimientosVentas frm = new VentanaMovimientosVentas();
+            frm.Visible = true;
+        }
+
+        private void salidaDeAlmacenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaMovimientosSalidasAlmacen frm = new VentanaMovimientosSalidasAlmacen();
+            frm.Visible = true;
+        }
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VentanaMovimientosRepisa frm = new VentanaMovimientosRepisa();
+            frm.Visible = true;
+        }
+
+        private void materiaPrimaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaCatalogoMateriaPrima frm = new VentanaCatalogoMateriaPrima();
+            frm.Visible = true;
+        }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaCatalogoProducto frm = new VentanaCatalogoProducto();
+            frm.Visible = true;
+        }
+
+        private void sucursalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaCatalogoSucursal frm = new VentanaCatalogoSucursal();
+            frm.Visible = true;
+        }
     }
 }

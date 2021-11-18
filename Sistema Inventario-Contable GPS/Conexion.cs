@@ -15,8 +15,9 @@ namespace Sistema_Inventario_Contable_GPS
             string puerto = "3306";
             string usuario = "root";
             string password = "huesos99";
-            string bd = "sistema_de_usuarios";
-           /* string puerto = "3306";
+            string bd = "gddds";
+           
+            /* string puerto = "3306";
             string usuario = "root";
             string password = "123456";
             string bd = "gddds";*/

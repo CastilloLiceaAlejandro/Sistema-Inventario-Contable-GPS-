@@ -17,7 +17,7 @@ namespace Sistema_Inventario_Contable_GPS
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)
         {
             RegistroDeUsuario frm = new RegistroDeUsuario();
             frm.Visible = true;

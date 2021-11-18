@@ -9,17 +9,20 @@ namespace Sistema_Inventario_Contable_GPS
 {
     class Modelo
     {
-        public int registro(Usuarios usuario)
+        public int registro(Usuarios usuarionuevo)
         {
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            string sql = "INSERT INTO usuarios (usuario, password, nombre, id_tipo) VALUES(@usuario, @password, @nombre, @id_tipo)";
+            string sql = "INSERT INTO empleados (nombreEMPLEADOS, edadEMPLEADOS, telefonoEMPLEADOS, correoEMPLEADOS, contrasenaEMPLEADOS, turnoEMPLEADOS, idPUESTO) VALUES(@nombreEMPLEADOS, @edadEMPLEADOS, @telefonoEMPLEADOS, @correoEMPLEADOS, @contrasenaEMPLEADOS, @turnoEMPLEADOS, @idPUESTO)";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
-            comando.Parameters.AddWithValue("@usuario", usuario.Usuario);
-            comando.Parameters.AddWithValue("@password", usuario.Password);
-            comando.Parameters.AddWithValue("@nombre", usuario.Nombre);
-            comando.Parameters.AddWithValue("@id_tipo", usuario.Id_tipo);
+            comando.Parameters.AddWithValue("@nombreEMPLEADOS", usuarionuevo.Nombre);
+            comando.Parameters.AddWithValue("@edadEMPLEADOS", usuarionuevo.Edad);
+            comando.Parameters.AddWithValue("@telefonoEMPLEADOS", usuarionuevo.Telefono);
+            comando.Parameters.AddWithValue("@correoEMPLEADOS", usuarionuevo.Correo);
+            comando.Parameters.AddWithValue("@contrasenaEMPLEADOS", usuarionuevo.Password);
+            comando.Parameters.AddWithValue("@turnoEMPLEADOS", usuarionuevo.Turno);
+            comando.Parameters.AddWithValue("@idPUESTO", usuarionuevo.Id_puesto);
 
             int resultado = comando.ExecuteNonQuery();
 
@@ -32,9 +35,9 @@ namespace Sistema_Inventario_Contable_GPS
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            string sql = "SELECT id FROM usuarios WHERE usuario LIKE @usuario";
+            string sql = "SELECT idEMPLEADOS FROM empleados WHERE telefonoEMPLEADOS LIKE @telefonoEMPLEADOS";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
-            comando.Parameters.AddWithValue("@usuario", usuario);
+            comando.Parameters.AddWithValue("@telefonoEMPLEADOS", usuario);
 
             reader = comando.ExecuteReader();
 
@@ -54,9 +57,9 @@ namespace Sistema_Inventario_Contable_GPS
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            string sql = "SELECT id, password, nombre, id_tipo FROM usuarios WHERE usuario LIKE @usuario";
+            string sql = "SELECT idEMPLEADOS, nombreEMPLEADOS, edadEMPLEADOS, telefonoEMPLEADOS, contrasenaEMPLEADOS, turnoEMPLEADOS, idPUESTO FROM empleados WHERE correoEMPLEADOS LIKE @correoEMPLEADOS";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
-            comando.Parameters.AddWithValue("@usuario", usuario);
+            comando.Parameters.AddWithValue("@correoEMPLEADOS", usuario);
 
             reader = comando.ExecuteReader();
 
@@ -65,10 +68,13 @@ namespace Sistema_Inventario_Contable_GPS
             while (reader.Read())
             {
                 usr = new Usuarios();
-                usr.Id = int.Parse(reader["id"].ToString());
-                usr.Password = reader["password"].ToString();
-                usr.Nombre = reader["nombre"].ToString();
-                usr.Id_tipo = int.Parse(reader["id_tipo"].ToString());
+                usr.IdEmpleados = int.Parse(reader["idEMPLEADOS"].ToString());
+                usr.Nombre = reader["nombreEMPLEADOS"].ToString();
+                usr.Edad = reader["edadEMPLEADOS"].ToString();
+                usr.Telefono = reader["telefonoEMPLEADOS"].ToString();
+                usr.Password = reader["contrasenaEMPLEADOS"].ToString();
+                usr.Turno = reader["turnoEMPLEADOS"].ToString();
+                usr.Id_puesto = int.Parse(reader["idPUESTO"].ToString());
             }
             return usr;
         }
