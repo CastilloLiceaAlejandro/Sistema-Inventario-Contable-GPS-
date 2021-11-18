@@ -210,6 +210,36 @@
     <Compile Include="VentanaNuevaMateriaPrima.Designer.cs">
       <DependentUpon>VentanaNuevaMateriaPrima.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaReporteAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaReporteAlmacen.Designer.cs">
+      <DependentUpon>VentanaReporteAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaReporteMovimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaReporteMovimientos.Designer.cs">
+      <DependentUpon>VentanaReporteMovimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaReporteSesiones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaReporteSesiones.Designer.cs">
+      <DependentUpon>VentanaReporteSesiones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaReporteVentas.Designer.cs">
+      <DependentUpon>VentanaReporteVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaResportesCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaResportesCompras.Designer.cs">
+      <DependentUpon>VentanaResportesCompras.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LogInUsuario.resx">
       <DependentUpon>LogInUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +305,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaNuevaMateriaPrima.resx">
       <DependentUpon>VentanaNuevaMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaReporteAlmacen.resx">
+      <DependentUpon>VentanaReporteAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaReporteMovimientos.resx">
+      <DependentUpon>VentanaReporteMovimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaReporteSesiones.resx">
+      <DependentUpon>VentanaReporteSesiones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaReporteVentas.resx">
+      <DependentUpon>VentanaReporteVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaResportesCompras.resx">
+      <DependentUpon>VentanaResportesCompras.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
