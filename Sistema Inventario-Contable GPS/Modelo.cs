@@ -78,5 +78,31 @@ namespace Sistema_Inventario_Contable_GPS
             }
             return usr;
         }
+        public static List<Compras> listaCompras ()
+        {
+            List<Compras> lista = new List<Compras> ();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idCOMPRAS, fechaCOMPRAS, productosCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            reader = comando.ExecuteReader();
+            Compras comp = new Compras();
+            while(reader.Read())
+            {
+                comp.idCOMPRAS = reader.GetInt32(0);
+                comp.fechaCOMPRAS = reader.GetString(1);
+                comp.productosCOMPRAS = reader.GetString(2);
+                comp.subtotalCOMPRAS = reader.GetInt32(3);
+                comp.ivaCOMPRAS = reader.GetInt32(4);
+                comp.totalCOMPRAS = reader.GetInt32(5);
+                comp.facturaCOMRPAS = reader.GetString(6);
+                comp.observacionesCOMPRAS = reader.GetString(7);
+                comp.idEMPLEADOS = reader.GetInt32(8);
+                lista.Add(comp);
+            }
+            return lista;
+        }
     }
 }

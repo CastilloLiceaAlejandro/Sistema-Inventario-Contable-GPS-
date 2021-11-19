@@ -189,5 +189,10 @@ namespace Sistema_Inventario_Contable_GPS
             VentanaReporteMovimientos frm = new VentanaReporteMovimientos();
             frm.Visible = true;
         }
+
+        private void VentanaAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -89,6 +89,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compras.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Control.cs" />
     <Compile Include="LogInUsuario.cs">

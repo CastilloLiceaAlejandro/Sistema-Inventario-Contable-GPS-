@@ -18,9 +18,9 @@ namespace Sistema_Inventario_Contable_GPS
 
           
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
-        {
+        {            
             string usuariocorreo = txtUsuario.Text;
             string password = txtPassword.Text;
 
