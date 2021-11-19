@@ -25,7 +25,7 @@ namespace Sistema_Inventario_Contable_GPS
             comando.Parameters.AddWithValue("@idPUESTO", usuarionuevo.Id_puesto);
 
             int resultado = comando.ExecuteNonQuery();
-
+            conexion.Close();
             return resultado;
         }
 
@@ -40,7 +40,7 @@ namespace Sistema_Inventario_Contable_GPS
             comando.Parameters.AddWithValue("@telefonoEMPLEADOS", usuario);
 
             reader = comando.ExecuteReader();
-
+            conexion.Close();
             if (reader.HasRows)
             {
                 return true;
@@ -76,6 +76,7 @@ namespace Sistema_Inventario_Contable_GPS
                 usr.Turno = reader["turnoEMPLEADOS"].ToString();
                 usr.Id_puesto = int.Parse(reader["idPUESTO"].ToString());
             }
+            conexion.Close();
             return usr;
         }
         public static List<Compras> listaCompras ()
@@ -91,18 +92,40 @@ namespace Sistema_Inventario_Contable_GPS
             Compras comp = new Compras();
             while(reader.Read())
             {
-                comp.idCOMPRAS = reader.GetInt32(0);
-                comp.fechaCOMPRAS = reader.GetString(1);
-                comp.productosCOMPRAS = reader.GetString(2);
-                comp.subtotalCOMPRAS = reader.GetInt32(3);
-                comp.ivaCOMPRAS = reader.GetInt32(4);
-                comp.totalCOMPRAS = reader.GetInt32(5);
-                comp.facturaCOMRPAS = reader.GetString(6);
-                comp.observacionesCOMPRAS = reader.GetString(7);
-                comp.idEMPLEADOS = reader.GetInt32(8);
+                comp.id = reader.GetInt32(0);
+                comp.fecha = reader.GetString(1);
+                comp.productos = reader.GetString(2);
+                comp.subtotal = reader.GetInt32(3);
+                comp.IVA = reader.GetInt32(4);
+                comp.total = reader.GetInt32(5);
+                comp.factura = reader.GetString(6);
+                comp.observaciones = reader.GetString(7);
+                comp.id_empleados = reader.GetInt32(8);
                 lista.Add(comp);
             }
+            conexion.Close();
             return lista;
+        }
+        
+        public int crearCompra(Compras comp)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "INSERT INTO compras (fechaCOMPRAS, productosCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS) VALUES(@fechaCOMPRAS, @productosCOMPRAS, @subtotalCOMPRAS, @ivaCOMPRAS, @totalCOMPRAS, @facturaCOMPRAS, @observacionesCOMPRAS, @idEMPLEADOS)";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@fechaCOMPRAS", comp.fecha);
+            comando.Parameters.AddWithValue("@productosCOMPRAS", comp.productos);
+            comando.Parameters.AddWithValue("@subtotalCOMPRAS", comp.subtotal);
+            comando.Parameters.AddWithValue("@ivaCOMPRAS", comp.IVA);
+            comando.Parameters.AddWithValue("@totalCOMPRAS", comp.total);
+            comando.Parameters.AddWithValue("@facturaCOMPRAS", comp.factura);
+            comando.Parameters.AddWithValue("@observacionesCOMPRAS", comp.observaciones);
+            comando.Parameters.AddWithValue("@idEMPLEADOS", comp.id_empleados);
+
+            int resultado = comando.ExecuteNonQuery();
+            conexion.Close();
+            return resultado;
         }
     }
 }

@@ -105,6 +105,12 @@
     <Compile Include="VentanaCatalogoSucursal.Designer.cs">
       <DependentUpon>VentanaCatalogoSucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaCompraMateriaPrima.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCompraMateriaPrima.Designer.cs">
+      <DependentUpon>VentanaCompraMateriaPrima.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaNuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaCatalogoSucursal.resx">
       <DependentUpon>VentanaCatalogoSucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaCompraMateriaPrima.resx">
+      <DependentUpon>VentanaCompraMateriaPrima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaNuevoUsuario.resx">
       <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>

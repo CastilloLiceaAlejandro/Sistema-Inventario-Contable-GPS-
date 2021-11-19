@@ -15,6 +15,14 @@ namespace Sistema_Inventario_Contable_GPS
         public VentanaNuevaCompra()
         {
             InitializeComponent();
+            dataGridView1.DataSource = Modelo.listaCompras();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VentanaCompraMateriaPrima compraMateria = new VentanaCompraMateriaPrima();
+            compraMateria.Show();
+            dataGridView1.DataSource = Modelo.listaCompras();
         }
     }
 }
