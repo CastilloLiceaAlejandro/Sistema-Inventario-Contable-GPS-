@@ -163,21 +163,21 @@ namespace Sistema_Inventario_Contable_GPS
             // materiaPrimaToolStripMenuItem
             // 
             this.materiaPrimaToolStripMenuItem.Name = "materiaPrimaToolStripMenuItem";
-            this.materiaPrimaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.materiaPrimaToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.materiaPrimaToolStripMenuItem.Text = "Materia prima";
             this.materiaPrimaToolStripMenuItem.Click += new System.EventHandler(this.materiaPrimaToolStripMenuItem_Click);
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.productoToolStripMenuItem.Text = "Producto";
             this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // sucursalToolStripMenuItem
             // 
             this.sucursalToolStripMenuItem.Name = "sucursalToolStripMenuItem";
-            this.sucursalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sucursalToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.sucursalToolStripMenuItem.Text = "Sucursal";
             this.sucursalToolStripMenuItem.Click += new System.EventHandler(this.sucursalToolStripMenuItem_Click);
             // 
@@ -195,20 +195,23 @@ namespace Sistema_Inventario_Contable_GPS
             // comprasToolStripMenuItem1
             // 
             this.comprasToolStripMenuItem1.Name = "comprasToolStripMenuItem1";
-            this.comprasToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.comprasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.comprasToolStripMenuItem1.Text = "Compras";
+            this.comprasToolStripMenuItem1.Click += new System.EventHandler(this.comprasToolStripMenuItem1_Click);
             // 
             // ventasToolStripMenuItem1
             // 
             this.ventasToolStripMenuItem1.Name = "ventasToolStripMenuItem1";
-            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.ventasToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.ventasToolStripMenuItem1.Text = "Ventas";
+            this.ventasToolStripMenuItem1.Click += new System.EventHandler(this.ventasToolStripMenuItem1_Click);
             // 
             // almacenToolStripMenuItem
             // 
             this.almacenToolStripMenuItem.Name = "almacenToolStripMenuItem";
-            this.almacenToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.almacenToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.almacenToolStripMenuItem.Text = "Almacen";
+            this.almacenToolStripMenuItem.Click += new System.EventHandler(this.almacenToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -216,21 +219,23 @@ namespace Sistema_Inventario_Contable_GPS
             this.sesionesToolStripMenuItem,
             this.movimientosToolStripMenuItem1});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // sesionesToolStripMenuItem
             // 
             this.sesionesToolStripMenuItem.Name = "sesionesToolStripMenuItem";
-            this.sesionesToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.sesionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sesionesToolStripMenuItem.Text = "Sesiones";
+            this.sesionesToolStripMenuItem.Click += new System.EventHandler(this.sesionesToolStripMenuItem_Click);
             // 
             // movimientosToolStripMenuItem1
             // 
             this.movimientosToolStripMenuItem1.Name = "movimientosToolStripMenuItem1";
-            this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(144, 22);
+            this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.movimientosToolStripMenuItem1.Text = "Movimientos";
+            this.movimientosToolStripMenuItem1.Click += new System.EventHandler(this.movimientosToolStripMenuItem1_Click);
             // 
             // AlertProdList
             // 

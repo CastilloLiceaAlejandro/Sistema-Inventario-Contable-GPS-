@@ -1,7 +1,7 @@
 ﻿
 namespace Sistema_Inventario_Contable_GPS
 {
-    partial class VentanaResportesCompras
+    partial class VentanaReporteCompras
     {
         /// <summary>
         /// Required designer variable.

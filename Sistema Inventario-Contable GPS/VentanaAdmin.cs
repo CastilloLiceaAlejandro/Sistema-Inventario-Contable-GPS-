@@ -159,5 +159,35 @@ namespace Sistema_Inventario_Contable_GPS
             VentanaCatalogoSucursal frm = new VentanaCatalogoSucursal();
             frm.Visible = true;
         }
+
+        private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VentanaReporteCompras frm = new VentanaReporteCompras();
+            frm.Visible = true;
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VentanaReporteVentas frm = new VentanaReporteVentas();
+            frm.Visible = true;
+        }
+
+        private void almacenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaReporteAlmacen frm = new VentanaReporteAlmacen();
+            frm.Visible = true;
+        }
+
+        private void sesionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VentanaReporteSesiones frm = new VentanaReporteSesiones();
+            frm.Visible = true;
+        }
+
+        private void movimientosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VentanaReporteMovimientos frm = new VentanaReporteMovimientos();
+            frm.Visible = true;
+        }
     }
 }
