@@ -1,9 +1,11 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Sistema_Inventario_Contable_GPS
 {
@@ -79,6 +81,97 @@ namespace Sistema_Inventario_Contable_GPS
             conexion.Close();
             return usr;
         }
+
+        public void ListaUsuarios(DataGridView grid)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            MySqlCommand cm = new MySqlCommand("select * from empleados", conexion);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            grid.DataSource = dt;
+            conexion.Close();
+
+        }
+
+        public void EliminarUsuario(TextBox selecciongrid)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            try {
+                string sql = "DELETE FROM empleados where idEMPLEADOS = @idEMPLEADOS";
+                MySqlCommand cm = new MySqlCommand(sql, conexion);
+                cm.Parameters.AddWithValue("idEMPLEADOS", selecciongrid.Text);
+                cm.ExecuteNonQuery();
+
+                MessageBox.Show("Se elimino usuario correctamente");
+                selecciongrid.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar usuario ", ex.Message);
+            }
+            conexion.Close();
+        }
+
+        public void ModificarUsuario(int id, string nombre, string edad, string telefono, string correo, string contrasena, string turno, int puesto)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            Usuarios usuarios = new Usuarios();
+            try
+            {
+                string sql = "UPDATE empleados SET nombreEMPLEADOS=@nombreEMPLEADOS,edadEMPLEADOS=@edadEMPLEADOS, telefonoEMPLEADOS=@telefonoEMPLEADOS, correoEMPLEADOS=@correoEMPLEADOS, contrasenaEMPLEADOS=@contrasenaEMPLEADOS, turnoEMPLEADOS=@turnoEMPLEADOS, idPUESTO=@idPUESTO WHERE idEMPLEADOS =@idEMPLEADOS";
+                MySqlCommand cm = new MySqlCommand(sql, conexion);
+                cm.Parameters.AddWithValue("@idEMPLEADOS", id);
+                cm.Parameters.AddWithValue("@nombreEMPLEADOS", nombre);
+                cm.Parameters.AddWithValue("@edadEMPLEADOS", edad);
+                cm.Parameters.AddWithValue("@telefonoEMPLEADOS", telefono);
+                cm.Parameters.AddWithValue("@correoEMPLEADOS", correo);
+                cm.Parameters.AddWithValue("@contrasenaEMPLEADOS", contrasena);
+                cm.Parameters.AddWithValue("@turnoEMPLEADOS", turno);
+                cm.Parameters.AddWithValue("@idPUESTO", puesto);
+                cm.ExecuteNonQuery();
+
+                MessageBox.Show("Se modifico el usuario correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo modificar el usuario ", ex.Message);
+            }
+            conexion.Close();
+
+
+        }
+
+        public void BuscarUsuarios(DataGridView grid, string nombre)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+
+            MySqlCommand cm = new MySqlCommand(string.Format("select * from empleados where nombreEMPLEADOS like '{0}%'",nombre ),conexion);
+
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            grid.DataSource = dt;
+            conexion.Close();
+
+            conexion.Close();
+
+        }
+
         public static List<Compras> listaCompras ()
         {
             List<Compras> lista = new List<Compras> ();

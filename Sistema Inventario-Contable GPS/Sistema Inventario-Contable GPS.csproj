@@ -111,6 +111,12 @@
     <Compile Include="VentanaCompraMateriaPrima.Designer.cs">
       <DependentUpon>VentanaCompraMateriaPrima.cs</DependentUpon>
     </Compile>
+    <Compile Include="VentanaModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaModificarUsuario.Designer.cs">
+      <DependentUpon>VentanaModificarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="VentanaNuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -255,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaCompraMateriaPrima.resx">
       <DependentUpon>VentanaCompraMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VentanaModificarUsuario.resx">
+      <DependentUpon>VentanaModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaNuevoUsuario.resx">
       <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>

@@ -41,6 +41,7 @@ namespace Sistema_Inventario_Contable_GPS
 
         }
 
+
         public string ctrlLogin(string usuariocorreo, string password)
         {
             Modelo modelo = new Modelo();
@@ -81,7 +82,7 @@ namespace Sistema_Inventario_Contable_GPS
             }
             return respuesta;
         }
-        private string generarSHA1(string cadena)
+        public string generarSHA1(string cadena)
         {
             UTF8Encoding enc = new UTF8Encoding();
             byte[] data = enc.GetBytes(cadena);
