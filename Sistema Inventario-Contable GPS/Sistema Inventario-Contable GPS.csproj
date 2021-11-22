@@ -99,16 +99,16 @@
       <DependentUpon>LogInUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo.cs" />
-    <Compile Include="VentanaCatalogoSucursal.cs">
+    <Compile Include="Catalogo\VentanaCatalogoSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaCatalogoSucursal.Designer.cs">
+    <Compile Include="Catalogo\VentanaCatalogoSucursal.Designer.cs">
       <DependentUpon>VentanaCatalogoSucursal.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaCompraMateriaPrima.cs">
+    <Compile Include="Movimiento\VentanaCompraMateriaPrima.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaCompraMateriaPrima.Designer.cs">
+    <Compile Include="Movimiento\VentanaCompraMateriaPrima.Designer.cs">
       <DependentUpon>VentanaCompraMateriaPrima.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaModificarUsuario.cs">
@@ -117,18 +117,18 @@
     <Compile Include="VentanaModificarUsuario.Designer.cs">
       <DependentUpon>VentanaModificarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevoUsuario.cs">
+    <Compile Include="Catalogo\VentanaNuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaNuevoUsuario.Designer.cs">
+    <Compile Include="Catalogo\VentanaNuevoUsuario.Designer.cs">
       <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="Usuarios.cs" />
-    <Compile Include="VentanaCatalogoProducto.cs">
+    <Compile Include="Catalogo\VentanaCatalogoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaCatalogoProducto.Designer.cs">
+    <Compile Include="Catalogo\VentanaCatalogoProducto.Designer.cs">
       <DependentUpon>VentanaCatalogoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="VentanaAdmin.cs">
@@ -139,136 +139,136 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VentanaCatalogoMateriaPrima.cs">
+    <Compile Include="Catalogo\VentanaCatalogoMateriaPrima.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaCatalogoMateriaPrima.Designer.cs">
+    <Compile Include="Catalogo\VentanaCatalogoMateriaPrima.Designer.cs">
       <DependentUpon>VentanaCatalogoMateriaPrima.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevaSucursal.cs">
+    <Compile Include="Movimiento\VentanaNuevaSucursal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaNuevaSucursal.Designer.cs">
+    <Compile Include="Movimiento\VentanaNuevaSucursal.Designer.cs">
       <DependentUpon>VentanaNuevaSucursal.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaCatalogoUsuarios.cs">
+    <Compile Include="Catalogo\VentanaCatalogoUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaCatalogoUsuarios.Designer.cs">
+    <Compile Include="Catalogo\VentanaCatalogoUsuarios.Designer.cs">
       <DependentUpon>VentanaCatalogoUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaMovimientosVentas.cs">
+    <Compile Include="Movimiento\VentanaMovimientosVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaMovimientosVentas.Designer.cs">
+    <Compile Include="Movimiento\VentanaMovimientosVentas.Designer.cs">
       <DependentUpon>VentanaMovimientosVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaMovimientosCompras.cs">
+    <Compile Include="Movimiento\VentanaMovimientosCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaMovimientosCompras.Designer.cs">
+    <Compile Include="Movimiento\VentanaMovimientosCompras.Designer.cs">
       <DependentUpon>VentanaMovimientosCompras.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaMovimientosEntradaAlmacen.cs">
+    <Compile Include="Movimiento\VentanaMovimientosEntradaAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaMovimientosEntradaAlmacen.Designer.cs">
+    <Compile Include="Movimiento\VentanaMovimientosEntradaAlmacen.Designer.cs">
       <DependentUpon>VentanaMovimientosEntradaAlmacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaMovimientosRepisa.cs">
+    <Compile Include="Movimiento\VentanaMovimientosRepisa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaMovimientosRepisa.Designer.cs">
+    <Compile Include="Movimiento\VentanaMovimientosRepisa.Designer.cs">
       <DependentUpon>VentanaMovimientosRepisa.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaMovimientosSalidasAlmacen.cs">
+    <Compile Include="Movimiento\VentanaMovimientosSalidasAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaMovimientosSalidasAlmacen.Designer.cs">
+    <Compile Include="Movimiento\VentanaMovimientosSalidasAlmacen.Designer.cs">
       <DependentUpon>VentanaMovimientosSalidasAlmacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevaCompra.cs">
+    <Compile Include="Movimiento\VentanaNuevaCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaNuevaCompra.Designer.cs">
+    <Compile Include="Movimiento\VentanaNuevaCompra.Designer.cs">
       <DependentUpon>VentanaNuevaCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevaEntradasAlmacen.cs">
+    <Compile Include="Movimiento\VentanaNuevaEntradasAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaNuevaEntradasAlmacen.Designer.cs">
+    <Compile Include="Movimiento\VentanaNuevaEntradasAlmacen.Designer.cs">
       <DependentUpon>VentanaNuevaEntradasAlmacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevaSalidasAlmacen.cs">
+    <Compile Include="Movimiento\VentanaNuevaSalidasAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaNuevaSalidasAlmacen.Designer.cs">
+    <Compile Include="Movimiento\VentanaNuevaSalidasAlmacen.Designer.cs">
       <DependentUpon>VentanaNuevaSalidasAlmacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevaVenta.cs">
+    <Compile Include="Movimiento\VentanaNuevaVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaNuevaVenta.Designer.cs">
+    <Compile Include="Movimiento\VentanaNuevaVenta.Designer.cs">
       <DependentUpon>VentanaNuevaVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevoProducto.cs">
+    <Compile Include="Catalogo\VentanaNuevoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaNuevoProducto.Designer.cs">
+    <Compile Include="Catalogo\VentanaNuevoProducto.Designer.cs">
       <DependentUpon>VentanaNuevoProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaNuevaMateriaPrima.cs">
+    <Compile Include="Catalogo\VentanaNuevaMateriaPrima.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaNuevaMateriaPrima.Designer.cs">
+    <Compile Include="Catalogo\VentanaNuevaMateriaPrima.Designer.cs">
       <DependentUpon>VentanaNuevaMateriaPrima.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaReporteAlmacen.cs">
+    <Compile Include="Reportes\VentanaReporteAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaReporteAlmacen.Designer.cs">
+    <Compile Include="Reportes\VentanaReporteAlmacen.Designer.cs">
       <DependentUpon>VentanaReporteAlmacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaReporteMovimientos.cs">
+    <Compile Include="Reportes\VentanaReporteMovimientos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaReporteMovimientos.Designer.cs">
+    <Compile Include="Reportes\VentanaReporteMovimientos.Designer.cs">
       <DependentUpon>VentanaReporteMovimientos.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaReporteSesiones.cs">
+    <Compile Include="Reportes\VentanaReporteSesiones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaReporteSesiones.Designer.cs">
+    <Compile Include="Reportes\VentanaReporteSesiones.Designer.cs">
       <DependentUpon>VentanaReporteSesiones.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaReporteVentas.cs">
+    <Compile Include="Reportes\VentanaReporteVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaReporteVentas.Designer.cs">
+    <Compile Include="Reportes\VentanaReporteVentas.Designer.cs">
       <DependentUpon>VentanaReporteVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaReporteCompras.cs">
+    <Compile Include="Reportes\VentanaReporteCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaReporteCompras.Designer.cs">
+    <Compile Include="Reportes\VentanaReporteCompras.Designer.cs">
       <DependentUpon>VentanaReporteCompras.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="LogInUsuario.resx">
       <DependentUpon>LogInUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaCatalogoSucursal.resx">
+    <EmbeddedResource Include="Catalogo\VentanaCatalogoSucursal.resx">
       <DependentUpon>VentanaCatalogoSucursal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaCompraMateriaPrima.resx">
+    <EmbeddedResource Include="Movimiento\VentanaCompraMateriaPrima.resx">
       <DependentUpon>VentanaCompraMateriaPrima.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaModificarUsuario.resx">
       <DependentUpon>VentanaModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevoUsuario.resx">
+    <EmbeddedResource Include="Catalogo\VentanaNuevoUsuario.resx">
       <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaCatalogoProducto.resx">
+    <EmbeddedResource Include="Catalogo\VentanaCatalogoProducto.resx">
       <DependentUpon>VentanaCatalogoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaAdmin.resx">
@@ -283,61 +283,61 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="VentanaCatalogoMateriaPrima.resx">
+    <EmbeddedResource Include="Catalogo\VentanaCatalogoMateriaPrima.resx">
       <DependentUpon>VentanaCatalogoMateriaPrima.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevaSucursal.resx">
+    <EmbeddedResource Include="Movimiento\VentanaNuevaSucursal.resx">
       <DependentUpon>VentanaNuevaSucursal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaCatalogoUsuarios.resx">
+    <EmbeddedResource Include="Catalogo\VentanaCatalogoUsuarios.resx">
       <DependentUpon>VentanaCatalogoUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaMovimientosVentas.resx">
+    <EmbeddedResource Include="Movimiento\VentanaMovimientosVentas.resx">
       <DependentUpon>VentanaMovimientosVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaMovimientosCompras.resx">
+    <EmbeddedResource Include="Movimiento\VentanaMovimientosCompras.resx">
       <DependentUpon>VentanaMovimientosCompras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaMovimientosEntradaAlmacen.resx">
+    <EmbeddedResource Include="Movimiento\VentanaMovimientosEntradaAlmacen.resx">
       <DependentUpon>VentanaMovimientosEntradaAlmacen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaMovimientosRepisa.resx">
+    <EmbeddedResource Include="Movimiento\VentanaMovimientosRepisa.resx">
       <DependentUpon>VentanaMovimientosRepisa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaMovimientosSalidasAlmacen.resx">
+    <EmbeddedResource Include="Movimiento\VentanaMovimientosSalidasAlmacen.resx">
       <DependentUpon>VentanaMovimientosSalidasAlmacen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevaCompra.resx">
+    <EmbeddedResource Include="Movimiento\VentanaNuevaCompra.resx">
       <DependentUpon>VentanaNuevaCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevaEntradasAlmacen.resx">
+    <EmbeddedResource Include="Movimiento\VentanaNuevaEntradasAlmacen.resx">
       <DependentUpon>VentanaNuevaEntradasAlmacen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevaSalidasAlmacen.resx">
+    <EmbeddedResource Include="Movimiento\VentanaNuevaSalidasAlmacen.resx">
       <DependentUpon>VentanaNuevaSalidasAlmacen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevaVenta.resx">
+    <EmbeddedResource Include="Movimiento\VentanaNuevaVenta.resx">
       <DependentUpon>VentanaNuevaVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevoProducto.resx">
+    <EmbeddedResource Include="Catalogo\VentanaNuevoProducto.resx">
       <DependentUpon>VentanaNuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaNuevaMateriaPrima.resx">
+    <EmbeddedResource Include="Catalogo\VentanaNuevaMateriaPrima.resx">
       <DependentUpon>VentanaNuevaMateriaPrima.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaReporteAlmacen.resx">
+    <EmbeddedResource Include="Reportes\VentanaReporteAlmacen.resx">
       <DependentUpon>VentanaReporteAlmacen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaReporteMovimientos.resx">
+    <EmbeddedResource Include="Reportes\VentanaReporteMovimientos.resx">
       <DependentUpon>VentanaReporteMovimientos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaReporteSesiones.resx">
+    <EmbeddedResource Include="Reportes\VentanaReporteSesiones.resx">
       <DependentUpon>VentanaReporteSesiones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaReporteVentas.resx">
+    <EmbeddedResource Include="Reportes\VentanaReporteVentas.resx">
       <DependentUpon>VentanaReporteVentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaReporteCompras.resx">
+    <EmbeddedResource Include="Reportes\VentanaReporteCompras.resx">
       <DependentUpon>VentanaReporteCompras.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
