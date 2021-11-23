@@ -200,34 +200,6 @@ namespace Sistema_Inventario_Contable_GPS
             return lista;
         }
 
-        public static List<Reportes> listaResportes()
-        {
-            List<Reportes> lista = new List<Reportes>();
-            MySqlDataReader reader;
-            MySqlConnection conexion = Conexion.getConexion();
-            conexion.Open();
-
-            string sql = "SELECT  idEMPLEADOS,  nombreEMPLEADOS, edadEMPLEADOS, telefonoEMPLEADOS, correoEMPLEADOS, contrasenaEMPLEADOS, turnoEMPLEADOS, idPUESTO FROM empleados";
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
-            reader = comando.ExecuteReader();
-            Reportes rep = new Reportes();
-            while (reader.Read())
-            {
-                rep.id = reader.GetInt32(0);
-                rep.nombre = reader.GetString(1);
-                rep.edad = reader.GetString(2);
-                rep.telefono = reader.GetString(3);
-                rep.correo = reader.GetString(4);
-                rep.contraseña = reader.GetString(5);
-                rep.turno = reader.GetString(6);
-                rep.id_puesto = reader.GetInt32(7);
-                lista.Add(rep);
-            }
-            conexion.Close();
-            return lista;
-        }
-
-
         public int crearCompra(Compras comp)
         {
             MySqlConnection conexion = Conexion.getConexion();
@@ -265,6 +237,26 @@ namespace Sistema_Inventario_Contable_GPS
                 comp.idEntrada = reader.GetInt32(0);
                 comp.fechaEntrada = reader.GetString(1);
                 comp.idEmpleado = reader.GetInt32(2);
+            }
+            conexion.Close();
+            return lista;
+        }
+
+        public static List<ReporteSesiones> listaReporteSesiones()
+        {
+            List<ReporteSesiones> lista = new List<ReporteSesiones>();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idEmpleadoSesion, HoraSesion from sesiones";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            reader = comando.ExecuteReader();
+            ReporteSesiones rs = new ReporteSesiones();
+            while (reader.Read())
+            {
+                rs.idEmpleadosesion = reader.GetInt32(0);
+                rs.horaSesion = reader.GetDateTime(1);
             }
             conexion.Close();
             return lista;

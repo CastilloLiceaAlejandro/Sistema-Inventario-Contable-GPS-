@@ -12,17 +12,12 @@ namespace Sistema_Inventario_Contable_GPS
         public string fechaEntrada { get; set; }
         public int idEmpleado { get; set; }
     }
-    class Reportes
+    class ReporteSesiones
     {
-        public int id { get; set; }
-        public string nombre { get; set; }
-        public string edad { get; set; }
-        public string telefono { get; set; }
-        public string correo { get; set; }
-        public string contraseña { get; set; }
-        public string turno { get; set; }
-        public int id_puesto { get; set; }
-
+        public int idEmpleadosesion { get; set; }
+        public DateTime horaSesion { get; set; }
     }
+
+
 
 }
