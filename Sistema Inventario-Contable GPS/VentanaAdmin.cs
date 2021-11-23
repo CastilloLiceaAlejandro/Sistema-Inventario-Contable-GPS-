@@ -192,7 +192,7 @@ namespace Sistema_Inventario_Contable_GPS
 
         private void VentanaAdmin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+
         }
     }
 }

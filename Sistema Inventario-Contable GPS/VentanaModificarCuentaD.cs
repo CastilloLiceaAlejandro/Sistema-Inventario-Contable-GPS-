@@ -10,21 +10,23 @@ using System.Windows.Forms;
 
 namespace Sistema_Inventario_Contable_GPS
 {
-    public partial class VentanaCompraMateriaPrima : Form
+    public partial class VentanaModificarCuentaD : Form
     {
-        public VentanaCompraMateriaPrima()
+        public VentanaModificarCuentaD(string fac)
         {
             InitializeComponent();
-            DateTime theDate = DateTime.Now;
-            txtfecha.Text = theDate.ToString("yyyy-MM-dd H:mm:ss");
+            string factura = fac;
+            Compras comp = new Compras();
+            comp = Modelo.porcompra(factura);
+            txtfactura.Text = factura;
+            txtfecha.Text = comp.fecha.ToString();
+            txtIVA.Text = comp.IVA.ToString();
+            txtsubtotal.Text = comp.subtotal.ToString();
+            txttt.Text = comp.total.ToString();
+            rtxtOb.Text = comp.observaciones.ToString();            
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -36,7 +38,7 @@ namespace Sistema_Inventario_Contable_GPS
                 comp.factura = txtfactura.Text;
                 comp.observaciones = rtxtOb.Text;
                 comp.id_empleado = Session.idempleados;
-                Modelo.crearCompra(comp);
+                Modelo.Modcompra(comp);
                 MessageBox.Show("Se ha modificado con exíto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
@@ -44,6 +46,11 @@ namespace Sistema_Inventario_Contable_GPS
             {
                 MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

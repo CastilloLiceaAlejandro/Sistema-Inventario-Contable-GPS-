@@ -366,6 +366,74 @@ namespace Sistema_Inventario_Contable_GPS
             }
             conexion.Close();
             return lista;
+        }        
+        public static Compras porcompra(string fact)
+        {
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras WHERE facturaCOMPRAS LIKE @facturaCOMPRAS";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@facturaCOMPRAS", fact);
+
+            reader = comando.ExecuteReader();
+
+            Compras comp = new Compras();
+
+            while (reader.Read())
+            {
+                comp.id = reader.GetInt32(0);
+                comp.fecha = reader.GetDateTime(1);
+                comp.subtotal = reader.GetInt32(2);
+                comp.IVA = reader.GetInt32(3);
+                comp.total = reader.GetInt32(4);
+                comp.factura = reader.GetString(5);
+                comp.observaciones = reader.GetString(6);
+                comp.id_empleado = reader.GetInt32(7);
+            }
+            conexion.Close();
+            return comp;
+        }
+        public static void Modcompra(Compras comp)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+            int caso;
+            Usuarios usuarios = new Usuarios();
+            string sql = "UPDATE compras SET idCOMPRAS=@idCOMPRAS, fechaCOMPRAS=@fechaCOMPRAS, subtotalCOMPRAS=@subtotalCOMPRAS, ivaCOMPRAS=@ivaCOMPRAS, totalCOMPRAS=@totalCOMPRAS, facturaCOMPRAS=@facturaCOMPRAS, observacionesCOMPRAS=@observacionesCOMPRAS, idEMPLEADOS=@idEMPLEADOS WHERE facturaCOMPRAS =@facturaCOMPRAS";
+            MySqlCommand cm = new MySqlCommand(sql, conexion);
+            cm.Parameters.AddWithValue("@idCOMPRAS", comp.id);
+            cm.Parameters.AddWithValue("@fechaCOMPRAS", comp.fecha);
+            cm.Parameters.AddWithValue("@subtotalCOMPRAS", comp.subtotal);
+            cm.Parameters.AddWithValue("@ivaCOMPRAS", comp.IVA);
+            cm.Parameters.AddWithValue("@totalCOMPRAS", comp.total);
+            cm.Parameters.AddWithValue("@facturaCOMPRAS", comp.factura);
+            cm.Parameters.AddWithValue("@observacionesCOMPRAS", comp.observaciones);
+            cm.Parameters.AddWithValue("@idEMPLEADOS", comp.id_empleado);
+            caso = cm.ExecuteNonQuery();
+
+            conexion.Close();
+        }
+        public static void EliminarCompra(string fac)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            try
+            {
+                string sql = "DELETE FROM compras where facturaCOMPRAS = @facturaCOMPRAS";
+                MySqlCommand cm = new MySqlCommand(sql, conexion);
+                cm.Parameters.AddWithValue("facturaCOMPRAS", fac);
+                cm.ExecuteNonQuery();
+
+                MessageBox.Show("Se elimino usuario correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar usuario ", ex.Message);
+            }
+            conexion.Close();
         }
     }
 }

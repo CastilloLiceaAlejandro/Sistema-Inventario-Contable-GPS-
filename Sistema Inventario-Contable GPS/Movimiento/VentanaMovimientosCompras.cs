@@ -31,7 +31,8 @@ namespace Sistema_Inventario_Contable_GPS
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            VentanaModificarCompra frm = new VentanaModificarCompra();
+            frm.Visible = true;
         }
     }
 }
