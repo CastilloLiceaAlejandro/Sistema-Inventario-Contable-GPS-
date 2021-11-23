@@ -15,6 +15,7 @@ namespace Sistema_Inventario_Contable_GPS
         public VentanaMovimientosVentas()
         {
             InitializeComponent();
+            dataGridView.DataSource = Modelo.listaVentas();
         }
 
         private void button3_Click(object sender, EventArgs e)

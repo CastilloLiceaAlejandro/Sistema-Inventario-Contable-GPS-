@@ -15,6 +15,7 @@ namespace Sistema_Inventario_Contable_GPS
         public VentanaReporteVentas()
         {
             InitializeComponent();
+            dataGridView.DataSource = Modelo.ReporteVentas();
         }
     }
 }

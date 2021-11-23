@@ -254,6 +254,7 @@
     <Compile Include="Reportes\VentanaReporteCompras.Designer.cs">
       <DependentUpon>VentanaReporteCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventas.cs" />
     <EmbeddedResource Include="LogInUsuario.resx">
       <DependentUpon>LogInUsuario.cs</DependentUpon>
     </EmbeddedResource>
