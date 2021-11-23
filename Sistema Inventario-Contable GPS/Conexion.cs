@@ -20,8 +20,8 @@ namespace Sistema_Inventario_Contable_GPS
            
              string puerto = "3306";
             string usuario = "root";
-            string password = "123456";
-            string bd = "gddds";
+            string password = "Hikari300";
+            string bd = "sistemacontable";
             //string bd = "sistemacontable";
 
             string cadenaConexion = "server=" + servidor + "; port=" + puerto + "; user id=" + usuario + "; password=" + password + "; database=" + bd;

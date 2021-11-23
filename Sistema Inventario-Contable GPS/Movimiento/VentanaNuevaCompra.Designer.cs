@@ -30,7 +30,7 @@ namespace Sistema_Inventario_Contable_GPS
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btninsertar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -38,32 +38,33 @@ namespace Sistema_Inventario_Contable_GPS
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 30);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(578, 343);
             this.dataGridView1.TabIndex = 6;
             // 
-            // button1
+            // btninsertar
             // 
-            this.button1.Location = new System.Drawing.Point(11, 5);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 21);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btninsertar.Location = new System.Drawing.Point(11, 5);
+            this.btninsertar.Margin = new System.Windows.Forms.Padding(2);
+            this.btninsertar.Name = "btninsertar";
+            this.btninsertar.Size = new System.Drawing.Size(157, 21);
+            this.btninsertar.TabIndex = 11;
+            this.btninsertar.Text = "Introducir nueva compra";
+            this.btninsertar.UseVisualStyleBackColor = true;
+            this.btninsertar.Click += new System.EventHandler(this.button1_Click);
             // 
             // VentanaNuevaCompra
             // 
+            this.AcceptButton = this.btninsertar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 380);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btninsertar);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VentanaNuevaCompra";
             this.Text = "VentanaNuevaCompra";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -73,6 +74,6 @@ namespace Sistema_Inventario_Contable_GPS
 
         #endregion
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btninsertar;
     }
 }

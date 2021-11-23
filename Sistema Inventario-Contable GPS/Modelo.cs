@@ -187,12 +187,12 @@ namespace Sistema_Inventario_Contable_GPS
             {
                 comp.id = reader.GetInt32(0);
                 comp.fecha = reader.GetDateTime(1);
-                comp.subtotal = reader.GetInt32(3);
-                comp.IVA = reader.GetInt32(4);
-                comp.total = reader.GetInt32(5);
-                comp.factura = reader.GetString(6);
-                comp.observaciones = reader.GetString(7);
-                comp.idEmpleado = reader.GetInt32(8);
+                comp.subtotal = reader.GetInt32(2);
+                comp.IVA = reader.GetInt32(3);
+                comp.total = reader.GetInt32(4);
+                comp.factura = reader.GetString(5);
+                comp.observaciones = reader.GetString(6);
+                comp.id_empleado = reader.GetInt32(7);
                 lista.Add(comp);
             }
             conexion.Close();
@@ -221,12 +221,12 @@ namespace Sistema_Inventario_Contable_GPS
             return lista;
         }
 
-        public int crearCompra(Compras comp)
+        public static int crearCompra(Compras comp)
         {
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            string sql = "INSERT INTO compras (fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS) VALUES(@fechaCOMPRAS, @productosCOMPRAS, @subtotalCOMPRAS, @ivaCOMPRAS, @totalCOMPRAS, @facturaCOMPRAS, @observacionesCOMPRAS, @idEMPLEADOS)";
+            string sql = "INSERT INTO compras (fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS) VALUES(@fechaCOMPRAS, @subtotalCOMPRAS, @ivaCOMPRAS, @totalCOMPRAS, @facturaCOMPRAS, @observacionesCOMPRAS, @idEMPLEADOS)";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
             comando.Parameters.AddWithValue("@fechaCOMPRAS", comp.fecha);
             comando.Parameters.AddWithValue("@subtotalCOMPRAS", comp.subtotal);
@@ -234,7 +234,7 @@ namespace Sistema_Inventario_Contable_GPS
             comando.Parameters.AddWithValue("@totalCOMPRAS", comp.total);
             comando.Parameters.AddWithValue("@facturaCOMPRAS", comp.factura);
             comando.Parameters.AddWithValue("@observacionesCOMPRAS", comp.observaciones);
-            comando.Parameters.AddWithValue("@idEMPLEADOS", comp.idEmpleado);
+            comando.Parameters.AddWithValue("@idEMPLEADOS", comp.id_empleado);
 
             int resultado = comando.ExecuteNonQuery();
             conexion.Close();

@@ -15,6 +15,8 @@ namespace Sistema_Inventario_Contable_GPS
         public VentanaCompraMateriaPrima()
         {
             InitializeComponent();
+            DateTime theDate = DateTime.Now;
+            txtfecha.Text = theDate.ToString("yyyy-MM-dd H:mm:ss");
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -24,7 +26,15 @@ namespace Sistema_Inventario_Contable_GPS
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            Compras comp = new Compras();
+            comp.fecha = DateTime.Parse(txtfecha.Text);
+            comp.subtotal = int.Parse(txtsubtotal.Text);
+            comp.IVA = int.Parse(txtIVA.Text);
+            comp.total = int.Parse(txttt.Text);
+            comp.factura = txtfactura.Text;
+            comp.observaciones = rtxtOb.Text;
+            comp.id_empleado = Session.idempleados;
+            Modelo.crearCompra(comp);
         }
     }
 }

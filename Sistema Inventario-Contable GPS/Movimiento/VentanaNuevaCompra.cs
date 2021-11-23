@@ -14,6 +14,7 @@ namespace Sistema_Inventario_Contable_GPS
     {
         public VentanaNuevaCompra()
         {
+            
             InitializeComponent();
             dataGridView1.DataSource = Modelo.listaCompras();
         }

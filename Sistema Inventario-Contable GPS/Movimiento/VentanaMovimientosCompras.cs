@@ -28,5 +28,10 @@ namespace Sistema_Inventario_Contable_GPS
         {
             dataGridView1.DataSource = Modelo.listaCompras();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
