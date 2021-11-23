@@ -111,6 +111,7 @@
     <Compile Include="Movimiento\VentanaCompraMateriaPrima.Designer.cs">
       <DependentUpon>VentanaCompraMateriaPrima.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes.cs" />
     <Compile Include="VentanaModificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

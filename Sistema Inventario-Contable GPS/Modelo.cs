@@ -220,5 +220,26 @@ namespace Sistema_Inventario_Contable_GPS
             conexion.Close();
             return resultado;
         }
+
+        public static List<ReporteAlmacen> listaReporteAlmacen()
+        {
+            List<ReporteAlmacen> lista = new List<ReporteAlmacen>();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idEntrada, fechaEntrada, idEmpleado from entradas";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            reader = comando.ExecuteReader();
+            ReporteAlmacen comp = new ReporteAlmacen();
+            while (reader.Read())
+            {
+                comp.idEntrada = reader.GetInt32(0);
+                comp.fechaEntrada = reader.GetString(1);
+                comp.idEmpleado = reader.GetInt32(2);
+            }
+            conexion.Close();
+            return lista;
+        }
     }
 }

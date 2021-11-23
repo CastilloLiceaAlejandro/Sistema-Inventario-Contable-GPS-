@@ -16,5 +16,12 @@ namespace Sistema_Inventario_Contable_GPS
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            dataGridViewEntradas.DataSource = Modelo.listaReporteAlmacen();
+            dataGridViewSalidas.DataSource = Modelo.listaReporteAlmacen();
+        }
     }
 }
