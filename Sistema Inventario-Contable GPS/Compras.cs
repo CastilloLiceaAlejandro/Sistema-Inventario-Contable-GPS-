@@ -8,7 +8,6 @@ namespace Sistema_Inventario_Contable_GPS
 {
     internal class Compras
     {
-
         string facturaCOMPRAS, observacionesCOMPRAS;
         DateTime fechaCOMPRAS;
         int idCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, idEMPLEADOS;
@@ -16,7 +15,6 @@ namespace Sistema_Inventario_Contable_GPS
         /*public string productos { get => productosCOMPRAS; set => productosCOMPRAS = value; }*/
         public string factura { get => facturaCOMPRAS; set => facturaCOMPRAS = value; }
         public string observaciones { get => observacionesCOMPRAS; set => observacionesCOMPRAS = value; }
-
         public int id { get => idCOMPRAS; set => idCOMPRAS = value; }
         public int subtotal { get => subtotalCOMPRAS; set => subtotalCOMPRAS = value; }
         public int IVA { get => ivaCOMPRAS; set => ivaCOMPRAS = value; }

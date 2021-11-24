@@ -260,11 +260,11 @@
     <Compile Include="Movimiento\VentanaModificarCompra.Designer.cs">
       <DependentUpon>VentanaModificarCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaModificarCuentaD.cs">
+    <Compile Include="VentanaComprasAgregModif.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaModificarCuentaD.Designer.cs">
-      <DependentUpon>VentanaModificarCuentaD.cs</DependentUpon>
+    <Compile Include="VentanaComprasAgregModif.Designer.cs">
+      <DependentUpon>VentanaComprasAgregModif.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas.cs" />
     <EmbeddedResource Include="LogInUsuario.resx">
@@ -357,8 +357,8 @@
     <EmbeddedResource Include="Movimiento\VentanaModificarCompra.resx">
       <DependentUpon>VentanaModificarCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaModificarCuentaD.resx">
-      <DependentUpon>VentanaModificarCuentaD.cs</DependentUpon>
+    <EmbeddedResource Include="VentanaComprasAgregModif.resx">
+      <DependentUpon>VentanaComprasAgregModif.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

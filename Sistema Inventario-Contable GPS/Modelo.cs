@@ -216,6 +216,7 @@ namespace Sistema_Inventario_Contable_GPS
                 vent.fechaVentas = reader.GetDateTime(1);
                 vent.totalVentas = reader.GetInt32(2);
                 vent.idEmpleado = reader.GetInt32(3);
+                lista.Add(vent);
             }
             conexion.Close();
             return lista;
@@ -251,7 +252,7 @@ namespace Sistema_Inventario_Contable_GPS
             comando.Parameters.AddWithValue("@idVentas", vent.idVentas);
             comando.Parameters.AddWithValue("@fechaVentas", vent.fechaVentas);
             comando.Parameters.AddWithValue("@subtotalVentas", vent.subtotalVentas);
-            comando.Parameters.AddWithValue("@IVAVentas", vent.IVAVentas);
+            comando.Parameters.AddWithValue("@IVAVentas", vent.ivaVentas);
             comando.Parameters.AddWithValue("@totalVentas", vent.totalVentas);
             comando.Parameters.AddWithValue("@observacionesVentas", vent.observacionesVentas);
             comando.Parameters.AddWithValue("@idEmpleados", vent.idEmpleado);

@@ -1,6 +1,6 @@
 ﻿namespace Sistema_Inventario_Contable_GPS
 {
-    partial class VentanaModificarCuentaD
+    partial class VentanaComprasAgregModif
     {
         /// <summary>
         /// Required designer variable.

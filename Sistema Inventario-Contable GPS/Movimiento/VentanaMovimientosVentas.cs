@@ -23,5 +23,10 @@ namespace Sistema_Inventario_Contable_GPS
             VentanaNuevaVenta frm = new VentanaNuevaVenta();
             frm.Visible = true;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = Modelo.listaVentas();
+        }
     }
 }

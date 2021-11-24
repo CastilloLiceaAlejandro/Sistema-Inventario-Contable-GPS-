@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sistema_Inventario_Contable_GPS
 {
-    public partial class VentanaModificarCuentaD : Form
+    public partial class VentanaComprasAgregModif : Form
     {
-        public VentanaModificarCuentaD(string fac)
+        public VentanaComprasAgregModif(string fac)
         {
             InitializeComponent();
             string factura = fac;

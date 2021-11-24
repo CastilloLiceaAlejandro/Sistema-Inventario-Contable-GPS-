@@ -22,7 +22,7 @@ namespace Sistema_Inventario_Contable_GPS
         {
             try
             {
-                VentanaModificarCuentaD frm = new VentanaModificarCuentaD(txtfac.Text);
+                VentanaComprasAgregModif frm = new VentanaComprasAgregModif(txtfac.Text);
                 frm.ShowDialog();
                 dataGridView1.DataSource = Modelo.listaCompras();
             }
