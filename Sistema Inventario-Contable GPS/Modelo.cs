@@ -179,20 +179,23 @@ namespace Sistema_Inventario_Contable_GPS
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            string sql = "SELECT idCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras";
+            string sql = "SELECT idCOMPRAS, costoCOMPRAS, productosCOMPRAS, cantidadCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
             reader = comando.ExecuteReader();
             Compras comp = new Compras();
             while(reader.Read())
             {
                 comp.id = reader.GetInt32(0);
-                comp.fecha = reader.GetDateTime(1);
-                comp.subtotal = reader.GetInt32(2);
-                comp.IVA = reader.GetInt32(3);
-                comp.total = reader.GetInt32(4);
-                comp.factura = reader.GetString(5);
-                comp.observaciones = reader.GetString(6);
-                comp.id_empleado = reader.GetInt32(7);
+                comp.costo= reader.GetInt32(1);
+                comp.productos= reader.GetString(2);
+                comp.cantidad = reader.GetInt32(3);
+                comp.fecha = reader.GetDateTime(4);
+                comp.subtotal = reader.GetInt32(5);
+                comp.IVA = reader.GetInt32(6);
+                comp.total = reader.GetInt32(7);
+                comp.factura = reader.GetString(8);
+                comp.observaciones = reader.GetString(9);
+                comp.id_empleado = reader.GetInt32(10);
                 lista.Add(comp);
             }
             conexion.Close();
@@ -227,7 +230,7 @@ namespace Sistema_Inventario_Contable_GPS
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            string sql = "INSERT INTO compras (fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS) VALUES(@fechaCOMPRAS, @subtotalCOMPRAS, @ivaCOMPRAS, @totalCOMPRAS, @facturaCOMPRAS, @observacionesCOMPRAS, @idEMPLEADOS)";
+            string sql = "INSERT INTO compras (costoCOMPRAS, productosCOMPRAS, cantidadCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS) VALUES(@costoCOMPRAS, @productosCOMPRAS, @cantidadCOMPRAS, @fechaCOMPRAS, @subtotalCOMPRAS, @ivaCOMPRAS, @totalCOMPRAS, @facturaCOMPRAS, @observacionesCOMPRAS, @idEMPLEADOS)";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
             comando.Parameters.AddWithValue("@fechaCOMPRAS", comp.fecha);
             comando.Parameters.AddWithValue("@subtotalCOMPRAS", comp.subtotal);
@@ -236,7 +239,9 @@ namespace Sistema_Inventario_Contable_GPS
             comando.Parameters.AddWithValue("@facturaCOMPRAS", comp.factura);
             comando.Parameters.AddWithValue("@observacionesCOMPRAS", comp.observaciones);
             comando.Parameters.AddWithValue("@idEMPLEADOS", comp.id_empleado);
-
+            comando.Parameters.AddWithValue("@costoCOMPRAS", comp.costo);
+            comando.Parameters.AddWithValue("@productosCOMPRAS", comp.productos);
+            comando.Parameters.AddWithValue("@cantidadCOMPRAS", comp.cantidad);
             int resultado = comando.ExecuteNonQuery();
             conexion.Close();
             return resultado;
@@ -374,7 +379,7 @@ namespace Sistema_Inventario_Contable_GPS
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            string sql = "SELECT idCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras WHERE facturaCOMPRAS LIKE @facturaCOMPRAS";
+            string sql = "SELECT idCOMPRAS, costoCOMPRAS, productosCOMRPAS, cantidadCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras WHERE facturaCOMPRAS LIKE @facturaCOMPRAS";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
             comando.Parameters.AddWithValue("@facturaCOMPRAS", fact);
 
@@ -385,13 +390,16 @@ namespace Sistema_Inventario_Contable_GPS
             while (reader.Read())
             {
                 comp.id = reader.GetInt32(0);
-                comp.fecha = reader.GetDateTime(1);
-                comp.subtotal = reader.GetInt32(2);
-                comp.IVA = reader.GetInt32(3);
-                comp.total = reader.GetInt32(4);
-                comp.factura = reader.GetString(5);
-                comp.observaciones = reader.GetString(6);
-                comp.id_empleado = reader.GetInt32(7);
+                comp.costo = reader.GetInt32(1);
+                comp.productos = reader.GetString(2);
+                comp.cantidad = reader.GetInt32(3);
+                comp.fecha = reader.GetDateTime(4);
+                comp.subtotal = reader.GetInt32(5);
+                comp.IVA = reader.GetInt32(6);
+                comp.total = reader.GetInt32(7);
+                comp.factura = reader.GetString(8);
+                comp.observaciones = reader.GetString(9);
+                comp.id_empleado = reader.GetInt32(10);
             }
             conexion.Close();
             return comp;
@@ -400,9 +408,7 @@ namespace Sistema_Inventario_Contable_GPS
         {
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
-            int caso;
-            Usuarios usuarios = new Usuarios();
-            string sql = "UPDATE compras SET idCOMPRAS=@idCOMPRAS, fechaCOMPRAS=@fechaCOMPRAS, subtotalCOMPRAS=@subtotalCOMPRAS, ivaCOMPRAS=@ivaCOMPRAS, totalCOMPRAS=@totalCOMPRAS, facturaCOMPRAS=@facturaCOMPRAS, observacionesCOMPRAS=@observacionesCOMPRAS, idEMPLEADOS=@idEMPLEADOS WHERE facturaCOMPRAS =@facturaCOMPRAS";
+            string sql = "UPDATE compras SET costoCOMPRAS=@costoCOMPRAS, productosCOMPRAS=@productosCOMPRAS, cantidadCOMPRAS=@cantidadCOMPRAS, idCOMPRAS=@idCOMPRAS, fechaCOMPRAS=@fechaCOMPRAS, subtotalCOMPRAS=@subtotalCOMPRAS, ivaCOMPRAS=@ivaCOMPRAS, totalCOMPRAS=@totalCOMPRAS, facturaCOMPRAS=@facturaCOMPRAS, observacionesCOMPRAS=@observacionesCOMPRAS, idEMPLEADOS=@idEMPLEADOS WHERE facturaCOMPRAS =@facturaCOMPRAS";
             MySqlCommand cm = new MySqlCommand(sql, conexion);
             cm.Parameters.AddWithValue("@idCOMPRAS", comp.id);
             cm.Parameters.AddWithValue("@fechaCOMPRAS", comp.fecha);
@@ -412,7 +418,10 @@ namespace Sistema_Inventario_Contable_GPS
             cm.Parameters.AddWithValue("@facturaCOMPRAS", comp.factura);
             cm.Parameters.AddWithValue("@observacionesCOMPRAS", comp.observaciones);
             cm.Parameters.AddWithValue("@idEMPLEADOS", comp.id_empleado);
-            caso = cm.ExecuteNonQuery();
+            cm.Parameters.AddWithValue("@costoCOMPRAS", comp.costo);
+            cm.Parameters.AddWithValue("@productosCOMPRAS", comp.productos);
+            cm.Parameters.AddWithValue("@cantidadCOMPRAS", comp.cantidad);
+            cm.ExecuteNonQuery();
 
             conexion.Close();
         }
@@ -423,16 +432,16 @@ namespace Sistema_Inventario_Contable_GPS
 
             try
             {
-                string sql = "DELETE FROM compras where facturaCOMPRAS = @facturaCOMPRAS";
+                string sql = "DELETE FROM compras where idCOMPRAS = @idCOMPRAS";
                 MySqlCommand cm = new MySqlCommand(sql, conexion);
-                cm.Parameters.AddWithValue("facturaCOMPRAS", fac);
+                cm.Parameters.AddWithValue("idCOMPRAS", fac);
                 cm.ExecuteNonQuery();
 
-                MessageBox.Show("Se elimino usuario correctamente");
+                MessageBox.Show("Se elimino la compra correctamente");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo eliminar usuario ", ex.Message);
+                MessageBox.Show("No se pudo eliminar la compra ", ex.Message);
             }
             conexion.Close();
         }

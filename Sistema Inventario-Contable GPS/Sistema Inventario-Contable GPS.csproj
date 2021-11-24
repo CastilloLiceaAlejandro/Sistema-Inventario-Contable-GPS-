@@ -260,10 +260,16 @@
     <Compile Include="Movimiento\VentanaModificarCompra.Designer.cs">
       <DependentUpon>VentanaModificarCompra.cs</DependentUpon>
     </Compile>
-    <Compile Include="VentanaComprasAgregModif.cs">
+    <Compile Include="Movimiento\VentanaBorrarCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="VentanaComprasAgregModif.Designer.cs">
+    <Compile Include="Movimiento\VentanaBorrarCompra.Designer.cs">
+      <DependentUpon>VentanaBorrarCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento\VentanaComprasAgregModif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento\VentanaComprasAgregModif.Designer.cs">
       <DependentUpon>VentanaComprasAgregModif.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventas.cs" />
@@ -357,7 +363,10 @@
     <EmbeddedResource Include="Movimiento\VentanaModificarCompra.resx">
       <DependentUpon>VentanaModificarCompra.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="VentanaComprasAgregModif.resx">
+    <EmbeddedResource Include="Movimiento\VentanaBorrarCompra.resx">
+      <DependentUpon>VentanaBorrarCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento\VentanaComprasAgregModif.resx">
       <DependentUpon>VentanaComprasAgregModif.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

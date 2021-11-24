@@ -32,6 +32,9 @@ namespace Sistema_Inventario_Contable_GPS
             {
                 Compras comp = new Compras();
                 comp.fecha = DateTime.Parse(txtfecha.Text);
+                comp.costo = float.Parse(txtcost.Text);
+                comp.productos = txtprod.Text;
+                comp.cantidad = int.Parse(txtcant.Text);
                 comp.subtotal = int.Parse(txtsubtotal.Text);
                 comp.IVA = int.Parse(txtIVA.Text);
                 comp.total = int.Parse(txttt.Text);
