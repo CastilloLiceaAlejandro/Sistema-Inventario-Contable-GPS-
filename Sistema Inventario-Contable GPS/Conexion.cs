@@ -17,8 +17,8 @@ namespace Sistema_Inventario_Contable_GPS
 
             //contraseñas solo desmarcar la suya
             //string password = "huesos99";
-            //string password = "Hikari300";
-            string password = "123456";
+            string password = "Hikari300";
+            //string password = "123456";
 
             //bases de datos solo desmarcar la suya
             //string bd = "gddds"; 

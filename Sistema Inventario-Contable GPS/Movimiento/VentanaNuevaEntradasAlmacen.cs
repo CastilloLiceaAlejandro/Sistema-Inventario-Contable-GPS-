@@ -14,7 +14,14 @@ namespace Sistema_Inventario_Contable_GPS
     {
         public VentanaNuevaEntradasAlmacen()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+            Modelo.listaEntradas(dataGridView1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VentanaCrearEntrada frm = new VentanaCrearEntrada(int.Parse(textBox1.Text));
+            frm.ShowDialog();
         }
     }
 }

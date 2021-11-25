@@ -10,25 +10,20 @@ using System.Windows.Forms;
 
 namespace Sistema_Inventario_Contable_GPS
 {
-    public partial class VentanaBorrarCompra : Form
+    public partial class VentaBorrarEntrada : Form
     {
-        public VentanaBorrarCompra()
+        public VentaBorrarEntrada()
         {
             InitializeComponent();
-            Modelo.listaCompras(dataGridView1);
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            Modelo.listaEntradas(dataGridView1);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             try
             {
-                Modelo.EliminarCompra(txtid.Text);
-                Modelo.listaCompras(dataGridView1);
+                Modelo.EliminarEntrada(txtid.Text);
+                Modelo.listaEntradas(dataGridView1);
             }
             catch (Exception ex)
             {

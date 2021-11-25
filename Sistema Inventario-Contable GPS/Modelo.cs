@@ -104,7 +104,8 @@ namespace Sistema_Inventario_Contable_GPS
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            try {
+            try
+            {
                 string sql = "DELETE FROM empleados where idEMPLEADOS = @idEMPLEADOS";
                 MySqlCommand cm = new MySqlCommand(sql, conexion);
                 cm.Parameters.AddWithValue("idEMPLEADOS", selecciongrid.Text);
@@ -157,7 +158,7 @@ namespace Sistema_Inventario_Contable_GPS
             conexion.Open();
 
 
-            MySqlCommand cm = new MySqlCommand(string.Format("select * from empleados where nombreEMPLEADOS like '{0}%'",nombre ),conexion);
+            MySqlCommand cm = new MySqlCommand(string.Format("select * from empleados where nombreEMPLEADOS like '{0}%'", nombre), conexion);
 
 
             MySqlDataAdapter da = new MySqlDataAdapter(cm);
@@ -172,34 +173,20 @@ namespace Sistema_Inventario_Contable_GPS
 
         }
 
-        public static List<Compras> listaCompras ()
+        public static void listaCompras(DataGridView grid)
         {
-            List<Compras> lista = new List<Compras> ();
-            MySqlDataReader reader;
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            string sql = "SELECT idCOMPRAS, costoCOMPRAS, productosCOMPRAS, cantidadCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras";
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
-            reader = comando.ExecuteReader();
-            Compras comp = new Compras();
-            while(reader.Read())
-            {
-                comp.id = reader.GetInt32(0);
-                comp.costo= reader.GetInt32(1);
-                comp.productos= reader.GetString(2);
-                comp.cantidad = reader.GetInt32(3);
-                comp.fecha = reader.GetDateTime(4);
-                comp.subtotal = reader.GetInt32(5);
-                comp.IVA = reader.GetInt32(6);
-                comp.total = reader.GetInt32(7);
-                comp.factura = reader.GetString(8);
-                comp.observaciones = reader.GetString(9);
-                comp.id_empleado = reader.GetInt32(10);
-                lista.Add(comp);
-            }
+            MySqlCommand cm = new MySqlCommand("select * from compras", conexion);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            grid.DataSource = dt;
             conexion.Close();
-            return lista;
         }
 
         public static List<Ventas> listaVentas()
@@ -265,7 +252,7 @@ namespace Sistema_Inventario_Contable_GPS
             int resultado = comando.ExecuteNonQuery();
             conexion.Close();
             return resultado;
-    }
+        }
 
         public static List<ReporteCompras> ReporteCompras()
         {
@@ -372,16 +359,16 @@ namespace Sistema_Inventario_Contable_GPS
             }
             conexion.Close();
             return lista;
-        }        
+        }
         public static Compras porcompra(string fact)
         {
             MySqlDataReader reader;
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
 
-            string sql = "SELECT idCOMPRAS, costoCOMPRAS, productosCOMRPAS, cantidadCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras WHERE facturaCOMPRAS LIKE @facturaCOMPRAS";
+            string sql = "SELECT idCOMPRAS, costoCOMPRAS, productosCOMPRAS, cantidadCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras WHERE idCOMPRAS LIKE @idCOMPRAS";
             MySqlCommand comando = new MySqlCommand(sql, conexion);
-            comando.Parameters.AddWithValue("@facturaCOMPRAS", fact);
+            comando.Parameters.AddWithValue("@idCOMPRAS", fact);
 
             reader = comando.ExecuteReader();
 
@@ -408,7 +395,7 @@ namespace Sistema_Inventario_Contable_GPS
         {
             MySqlConnection conexion = Conexion.getConexion();
             conexion.Open();
-            string sql = "UPDATE compras SET costoCOMPRAS=@costoCOMPRAS, productosCOMPRAS=@productosCOMPRAS, cantidadCOMPRAS=@cantidadCOMPRAS, idCOMPRAS=@idCOMPRAS, fechaCOMPRAS=@fechaCOMPRAS, subtotalCOMPRAS=@subtotalCOMPRAS, ivaCOMPRAS=@ivaCOMPRAS, totalCOMPRAS=@totalCOMPRAS, facturaCOMPRAS=@facturaCOMPRAS, observacionesCOMPRAS=@observacionesCOMPRAS, idEMPLEADOS=@idEMPLEADOS WHERE facturaCOMPRAS =@facturaCOMPRAS";
+            string sql = "UPDATE compras SET costoCOMPRAS=@costoCOMPRAS, productosCOMPRAS=@productosCOMPRAS, cantidadCOMPRAS=@cantidadCOMPRAS, idCOMPRAS=@idCOMPRAS, fechaCOMPRAS=@fechaCOMPRAS, subtotalCOMPRAS=@subtotalCOMPRAS, ivaCOMPRAS=@ivaCOMPRAS, totalCOMPRAS=@totalCOMPRAS, facturaCOMPRAS=@facturaCOMPRAS, observacionesCOMPRAS=@observacionesCOMPRAS, idEMPLEADOS=@idEMPLEADOS WHERE idCOMPRAS =@idCOMPRAS";
             MySqlCommand cm = new MySqlCommand(sql, conexion);
             cm.Parameters.AddWithValue("@idCOMPRAS", comp.id);
             cm.Parameters.AddWithValue("@fechaCOMPRAS", comp.fecha);
@@ -444,6 +431,272 @@ namespace Sistema_Inventario_Contable_GPS
                 MessageBox.Show("No se pudo eliminar la compra ", ex.Message);
             }
             conexion.Close();
+        }
+        public static List<Compras> busquedalistaCompras(int fact)
+        {
+            List<Compras> lista = new List<Compras>();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idCOMPRAS, costoCOMPRAS, productosCOMPRAS, cantidadCOMPRAS, fechaCOMPRAS, subtotalCOMPRAS, ivaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, observacionesCOMPRAS, idEMPLEADOS FROM compras WHERE idCOMPRAS LIKE @idCOMPRAS";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@idCOMPRAS", fact);
+
+            reader = comando.ExecuteReader();
+            Compras comp = new Compras();
+            while (reader.Read())
+            {
+                comp.id = reader.GetInt32(0);
+                comp.costo = reader.GetInt32(1);
+                comp.productos = reader.GetString(2);
+                comp.cantidad = reader.GetInt32(3);
+                comp.fecha = reader.GetDateTime(4);
+                comp.subtotal = reader.GetInt32(5);
+                comp.IVA = reader.GetInt32(6);
+                comp.total = reader.GetInt32(7);
+                comp.factura = reader.GetString(8);
+                comp.observaciones = reader.GetString(9);
+                comp.id_empleado = reader.GetInt32(10);
+                lista.Add(comp);
+            }
+            conexion.Close();
+            return lista;
+        }
+        /////////////////////////////////////////////////////////////////////////////////////////////////
+        public static void listaEntradas(DataGridView grid)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            MySqlCommand cm = new MySqlCommand("select * from entradas", conexion);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            grid.DataSource = dt;
+            conexion.Close();
+        }
+        public static int crearEntrada(Entradas comp)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "INSERT INTO entradas (idEntrada, fechaEntrada, folioEntrada, observacionesEntrada, idEmpleado) VALUES(@idEntrada, @fechaEntrada, @folioEntrada, @observacionesEntrada, @idEmpleado)";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@idEntrada", comp.id);
+            comando.Parameters.AddWithValue("@folioEntrada", comp.folio);
+            comando.Parameters.AddWithValue("@fechaEntrada", comp.fecha);
+            comando.Parameters.AddWithValue("@observacionesEntrada", comp.observaciones);
+            comando.Parameters.AddWithValue("@idEMPLEADO", comp.id_empleado);
+            int resultado = comando.ExecuteNonQuery();
+            conexion.Close();
+            return resultado;
+        }
+        public static Entradas porentrada(int fact)
+        {
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idEntrada, fechaEntrada, folioEntrada, observacionesEntrada, idEmpleado FROM entradas WHERE idEntrada LIKE @idEntrada";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@idEntrada", fact);
+
+            reader = comando.ExecuteReader();
+
+            Entradas comp = new Entradas();
+
+            while (reader.Read())
+            {
+                comp.id = reader.GetInt32(0);
+                comp.fecha = reader.GetDateTime(1);
+                comp.folio = reader.GetInt32(2);
+                comp.observaciones = reader.GetString(3);
+                comp.id_empleado = reader.GetInt32(4);
+            }
+            conexion.Close();
+            return comp;
+        }
+        public static void ModEntrada(Entradas comp)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+            string sql = "UPDATE entradas SET idEntrada=@idEntrada, fechaEntrada=@fechaEntrada, folioEntrada=@folioEntrada, observacionesEntrada=@observacionesEntrada, idEmpleado=@idEmpleado WHERE idEntrada = @idEntrada";
+            MySqlCommand cm = new MySqlCommand(sql, conexion);
+            cm.Parameters.AddWithValue("@idEntrada", comp.id);
+            cm.Parameters.AddWithValue("@folioEntrada", comp.folio);
+            cm.Parameters.AddWithValue("@fechaEntrada", comp.fecha);
+            cm.Parameters.AddWithValue("@observacionesEntrada", comp.observaciones);
+            cm.Parameters.AddWithValue("@idEmpleado", comp.id_empleado);
+            cm.ExecuteNonQuery();
+
+            conexion.Close();
+        }
+        public static void EliminarEntrada(string fac)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            try
+            {
+                string sql = "DELETE FROM entradas where idEntrada = @idEntrada";
+                MySqlCommand cm = new MySqlCommand(sql, conexion);
+                cm.Parameters.AddWithValue("idEntrada", fac);
+                cm.ExecuteNonQuery();
+
+                MessageBox.Show("Se elimino la entrada correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar la entrada ", ex.Message);
+            }
+            conexion.Close();
+        }
+        public static List<Entradas> busquedalistaEntrada(int fact)
+        {
+            List<Entradas> lista = new List<Entradas>();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idEntrada, fechaEntrada, folioEntrada, observacionesEntrada, idEmpleado FROM entradas WHERE idEntrada LIKE @idEntrada";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@idEntrada", fact);
+
+            reader = comando.ExecuteReader();
+            Entradas comp = new Entradas();
+            while (reader.Read())
+            {
+                comp.id = reader.GetInt32(0);
+                comp.fecha = reader.GetDateTime(1);
+                comp.folio = reader.GetInt32(2);
+                comp.observaciones = reader.GetString(3);
+                comp.id_empleado = reader.GetInt32(4);
+                lista.Add(comp);
+            }
+            conexion.Close();
+            return lista;
+        }
+        //////////////////////////////////////////////////////////////////////////////
+        public static void listaSalidas(DataGridView grid)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            MySqlCommand cm = new MySqlCommand("select * from salidas", conexion);
+
+            MySqlDataAdapter da = new MySqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+
+            da.Fill(dt);
+
+            grid.DataSource = dt;
+            conexion.Close();
+        }
+        public static int crearSalidas(Salidas comp)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "INSERT INTO salidas (idSalida, fechaSalida, folioSalida, observacionesSalida, idEmpleado) VALUES(@idSalida, @fechaSalida, @folioSalida, @observacionesSalida, @idEmpleado)";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@idSalida", comp.id);
+            comando.Parameters.AddWithValue("@fechaSalida", comp.fecha);
+            comando.Parameters.AddWithValue("@folioSalida", comp.folio);
+            comando.Parameters.AddWithValue("@observacionesSalida", comp.observaciones);
+            comando.Parameters.AddWithValue("@idEMPLEADO", comp.id_empleado);
+            int resultado = comando.ExecuteNonQuery();
+            conexion.Close();
+            return resultado;
+        }
+        public static Salidas porSalida(int fact)
+        {
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idSalida, fechaSalida, folioSalida, observacionesSalida, idEmpleado FROM salidas WHERE idSalida LIKE @idSalida";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@idSalida", fact);
+
+            reader = comando.ExecuteReader();
+
+            Salidas comp = new Salidas();
+
+            while (reader.Read())
+            {
+                comp.id = reader.GetInt32(0);
+                comp.fecha = reader.GetDateTime(1);
+                comp.folio = reader.GetInt32(2);
+                comp.observaciones = reader.GetString(3);
+                comp.id_empleado = reader.GetInt32(4);
+            }
+            conexion.Close();
+            return comp;
+        }
+        public static void ModSalidas(Salidas comp)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+            string sql = "UPDATE salidas SET idSalida=@idSalida, fechaSalida=@fechaSalida, folioSalida=@folioSalida, observacionesSalida=@observacionesSalida, idEmpleado=@idEmpleado WHERE idSalida = @idSalida";
+
+            MySqlCommand cm = new MySqlCommand(sql, conexion);
+            cm.Parameters.AddWithValue("@idSalida", comp.id);
+            cm.Parameters.AddWithValue("@fechaSalida", comp.fecha);
+            cm.Parameters.AddWithValue("@folioSalida", comp.folio);
+            cm.Parameters.AddWithValue("@observacionesSalida", comp.observaciones);
+            cm.Parameters.AddWithValue("@idEmpleado", comp.id_empleado);
+            cm.ExecuteNonQuery();
+
+            conexion.Close();
+        }
+        public static void EliminarSalida(string fac)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            try
+            {
+                string sql = "DELETE FROM salidas where idSalida = @idSalida";
+                MySqlCommand cm = new MySqlCommand(sql, conexion);
+                cm.Parameters.AddWithValue("idSalida", fac);
+                cm.ExecuteNonQuery();
+
+                MessageBox.Show("Se elimino la salida correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar la salida ", ex.Message);
+            }
+            conexion.Close();
+        }
+        public static List<Salidas> busquedalistaSalida(int fact)
+        {
+            List<Salidas> lista = new List<Salidas>();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idSalida, fechaSalida, folioSalida, observacionesSalida, idSalida FROM salidas WHERE idSalida LIKE @idSalida";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            comando.Parameters.AddWithValue("@idSalida", fact);
+
+            reader = comando.ExecuteReader();
+            Salidas comp = new Salidas();
+            while (reader.Read())
+            {
+                comp.id = reader.GetInt32(0);
+                comp.fecha = reader.GetDateTime(1);
+                comp.folio = reader.GetInt32(2);
+                comp.observaciones = reader.GetString(3);
+                comp.id_empleado = reader.GetInt32(4);
+                lista.Add(comp);
+            }
+            conexion.Close();
+            return lista;
         }
 
         public static List<ReporteCompras> ReporteMCompras()

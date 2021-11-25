@@ -41,7 +41,7 @@ namespace Sistema_Inventario_Contable_GPS
                 comp.observaciones = rtxtOb.Text;
                 comp.id_empleado = Session.idempleados;
                 Modelo.crearCompra(comp);
-                MessageBox.Show("Se ha modificado con exíto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se ha introducido con exíto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
             catch (Exception ex)

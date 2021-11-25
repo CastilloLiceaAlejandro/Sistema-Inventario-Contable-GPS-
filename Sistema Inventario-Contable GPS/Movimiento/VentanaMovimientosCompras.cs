@@ -15,7 +15,7 @@ namespace Sistema_Inventario_Contable_GPS
         public VentanaMovimientosCompras()
         {
             InitializeComponent();
-            dataGridView1.DataSource = Modelo.listaCompras();
+            Modelo.listaCompras(dataGridView1);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace Sistema_Inventario_Contable_GPS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = Modelo.listaCompras();
+            Modelo.listaCompras(dataGridView1);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -39,6 +39,11 @@ namespace Sistema_Inventario_Contable_GPS
         {
             VentanaBorrarCompra frm = new VentanaBorrarCompra();
             frm.Visible = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = Modelo.busquedalistaCompras(int.Parse(textBox1.Text));
         }
     }
 }

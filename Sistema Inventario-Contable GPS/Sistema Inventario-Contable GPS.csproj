@@ -92,6 +92,7 @@
     <Compile Include="Compras.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Control.cs" />
+    <Compile Include="Entradas.cs" />
     <Compile Include="LogInUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,11 +106,59 @@
     <Compile Include="Catalogo\VentanaCatalogoSucursal.Designer.cs">
       <DependentUpon>VentanaCatalogoSucursal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimiento\CrearSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento\CrearSalida.Designer.cs">
+      <DependentUpon>CrearSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento\VentaBorrarEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento\VentaBorrarEntrada.Designer.cs">
+      <DependentUpon>VentaBorrarEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento\VentanaBorrarSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento\VentanaBorrarSalida.Designer.cs">
+      <DependentUpon>VentanaBorrarSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movimiento\VentanaCompraMateriaPrima.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Movimiento\VentanaCompraMateriaPrima.Designer.cs">
       <DependentUpon>VentanaCompraMateriaPrima.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento\VentanaCrearEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento\VentanaCrearEntrada.Designer.cs">
+      <DependentUpon>VentanaCrearEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento\VentanadaModificarSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento\VentanadaModificarSalida.Designer.cs">
+      <DependentUpon>VentanadaModificarSalida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento\VentanaModificarEntrada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento\VentanaModificarEntrada.Designer.cs">
+      <DependentUpon>VentanaModificarEntrada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento\VentanaTmodificarE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento\VentanaTmodificarE.Designer.cs">
+      <DependentUpon>VentanaTmodificarE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento\VentanaTmodificarS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimiento\VentanaTmodificarS.Designer.cs">
+      <DependentUpon>VentanaTmodificarS.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes.cs" />
     <Compile Include="Movimiento\VentanaModificarUsuario.cs">
@@ -124,6 +173,7 @@
     <Compile Include="Catalogo\VentanaNuevoUsuario.Designer.cs">
       <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Salidas.cs" />
     <Compile Include="Session.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="VentanaAdmin.cs">
@@ -261,14 +311,38 @@
     <EmbeddedResource Include="Catalogo\VentanaCatalogoSucursal.resx">
       <DependentUpon>VentanaCatalogoSucursal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento\CrearSalida.resx">
+      <DependentUpon>CrearSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento\VentaBorrarEntrada.resx">
+      <DependentUpon>VentaBorrarEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento\VentanaBorrarSalida.resx">
+      <DependentUpon>VentanaBorrarSalida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Movimiento\VentanaCompraMateriaPrima.resx">
       <DependentUpon>VentanaCompraMateriaPrima.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento\VentanaCrearEntrada.resx">
+      <DependentUpon>VentanaCrearEntrada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento\VentanadaModificarSalida.resx">
+      <DependentUpon>VentanadaModificarSalida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento\VentanaModificarEntrada.resx">
+      <DependentUpon>VentanaModificarEntrada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimiento\VentanaModificarUsuario.resx">
       <DependentUpon>VentanaModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogo\VentanaNuevoUsuario.resx">
       <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento\VentanaTmodificarE.resx">
+      <DependentUpon>VentanaTmodificarE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimiento\VentanaTmodificarS.resx">
+      <DependentUpon>VentanaTmodificarS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VentanaAdmin.resx">
       <DependentUpon>VentanaAdmin.cs</DependentUpon>

@@ -15,7 +15,7 @@ namespace Sistema_Inventario_Contable_GPS
         public VentanaModificarCompra()
         {
             InitializeComponent();
-            dataGridView1.DataSource = Modelo.listaCompras();
+            Modelo.listaCompras(dataGridView1);
         }
 
         private void btnmod_Click(object sender, EventArgs e)
@@ -24,7 +24,7 @@ namespace Sistema_Inventario_Contable_GPS
             {
                 VentanaComprasAgregModif frm = new VentanaComprasAgregModif(txtfac.Text);
                 frm.ShowDialog();
-                dataGridView1.DataSource = Modelo.listaCompras();
+                Modelo.listaCompras(dataGridView1);
             }
             catch (Exception ex)
             {
