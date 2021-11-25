@@ -126,12 +126,6 @@
     </Compile>
     <Compile Include="Session.cs" />
     <Compile Include="Usuarios.cs" />
-    <Compile Include="Catalogo\VentanaCatalogoProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Catalogo\VentanaCatalogoProducto.Designer.cs">
-      <DependentUpon>VentanaCatalogoProducto.cs</DependentUpon>
-    </Compile>
     <Compile Include="VentanaAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,12 +170,6 @@
     <Compile Include="Movimiento\VentanaMovimientosEntradaAlmacen.Designer.cs">
       <DependentUpon>VentanaMovimientosEntradaAlmacen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Movimiento\VentanaMovimientosRepisa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Movimiento\VentanaMovimientosRepisa.Designer.cs">
-      <DependentUpon>VentanaMovimientosRepisa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Movimiento\VentanaMovimientosSalidasAlmacen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,12 +199,6 @@
     </Compile>
     <Compile Include="Movimiento\VentanaNuevaVenta.Designer.cs">
       <DependentUpon>VentanaNuevaVenta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Catalogo\VentanaNuevoProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Catalogo\VentanaNuevoProducto.Designer.cs">
-      <DependentUpon>VentanaNuevoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Catalogo\VentanaNuevaMateriaPrima.cs">
       <SubType>Form</SubType>
@@ -288,9 +270,6 @@
     <EmbeddedResource Include="Catalogo\VentanaNuevoUsuario.resx">
       <DependentUpon>VentanaNuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Catalogo\VentanaCatalogoProducto.resx">
-      <DependentUpon>VentanaCatalogoProducto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="VentanaAdmin.resx">
       <DependentUpon>VentanaAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,9 +300,6 @@
     <EmbeddedResource Include="Movimiento\VentanaMovimientosEntradaAlmacen.resx">
       <DependentUpon>VentanaMovimientosEntradaAlmacen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Movimiento\VentanaMovimientosRepisa.resx">
-      <DependentUpon>VentanaMovimientosRepisa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Movimiento\VentanaMovimientosSalidasAlmacen.resx">
       <DependentUpon>VentanaMovimientosSalidasAlmacen.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,9 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimiento\VentanaNuevaVenta.resx">
       <DependentUpon>VentanaNuevaVenta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Catalogo\VentanaNuevoProducto.resx">
-      <DependentUpon>VentanaNuevoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogo\VentanaNuevaMateriaPrima.resx">
       <DependentUpon>VentanaNuevaMateriaPrima.cs</DependentUpon>
