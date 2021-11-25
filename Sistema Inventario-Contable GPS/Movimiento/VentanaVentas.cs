@@ -28,5 +28,17 @@ namespace Sistema_Inventario_Contable_GPS
         {
             dataGridView.DataSource = Modelo.listaVentas();
         }
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            VentanaModificarVenta frm = new VentanaModificarVenta();
+            frm.Visible = true;
+        }
+
+        private void buttonBorrar_Click(object sender, EventArgs e)
+        {
+            VentanaBorrarVenta frm = new VentanaBorrarVenta();
+            frm.Visible = true;
+        }
     }
 }

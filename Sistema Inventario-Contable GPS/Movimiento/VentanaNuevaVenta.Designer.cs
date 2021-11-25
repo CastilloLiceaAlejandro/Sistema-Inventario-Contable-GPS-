@@ -29,21 +29,12 @@ namespace Sistema_Inventario_Contable_GPS
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btninsertar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(215, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 26);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -72,12 +63,24 @@ namespace Sistema_Inventario_Contable_GPS
             this.dataGridView1.Size = new System.Drawing.Size(770, 422);
             this.dataGridView1.TabIndex = 12;
             // 
+            // btninsertar
+            // 
+            this.btninsertar.Enabled = false;
+            this.btninsertar.Location = new System.Drawing.Point(204, 8);
+            this.btninsertar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btninsertar.Name = "btninsertar";
+            this.btninsertar.Size = new System.Drawing.Size(209, 26);
+            this.btninsertar.TabIndex = 16;
+            this.btninsertar.Text = "Agregar nueva materia prima";
+            this.btninsertar.UseVisualStyleBackColor = true;
+            this.btninsertar.Click += new System.EventHandler(this.btninsertar_Click);
+            // 
             // VentanaNuevaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 468);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btninsertar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -90,10 +93,9 @@ namespace Sistema_Inventario_Contable_GPS
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btninsertar;
     }
 }

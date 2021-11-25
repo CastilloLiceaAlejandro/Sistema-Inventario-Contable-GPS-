@@ -265,7 +265,8 @@ namespace Sistema_Inventario_Contable_GPS
             int resultado = comando.ExecuteNonQuery();
             conexion.Close();
             return resultado;
-    }
+        }
+    
 
         public static List<ReporteCompras> ReporteCompras()
         {
@@ -467,6 +468,44 @@ namespace Sistema_Inventario_Contable_GPS
             }
             conexion.Close();
             return lista;
+        }
+
+        public static void Modventa(Ventas vent)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+            string sql = "UPDATE ventas SET idVENTAS=@idVENTAS, fechaVENTAS=@fechaVENTAS, subtotalVENTAS=@subtotalVENTAS, ivaVENTAS=@ivaVENTAS, totalVENTAS=@totalVENTAS, observacionesCOMPRAS=@observacionesCOMPRAS, idEMPLEADO=@idEMPLEADO WHERE idVENTAS=@idVENTAS";
+            MySqlCommand cm = new MySqlCommand(sql, conexion);
+            cm.Parameters.AddWithValue("@idVENTAS", vent.idVentas);
+            cm.Parameters.AddWithValue("@fechaVENTAS", vent.fechaVentas);
+            cm.Parameters.AddWithValue("@subtotalVENTAS", vent.subtotalVentas);
+            cm.Parameters.AddWithValue("@ivaVENTAS", vent.ivaVentas);
+            cm.Parameters.AddWithValue("@totalVENTAS", vent.totalVentas);
+            cm.Parameters.AddWithValue("@observacionesCOMPRAS", vent.observacionesVentas);
+            cm.Parameters.AddWithValue("@idEMPLEADO", vent.idEmpleado);
+            cm.ExecuteNonQuery();
+
+            conexion.Close();
+        }
+       public static void Eliminarventa(string idventa)
+        {
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            try
+            {
+                string sql = "DELETE FROM ventas where idVENTAS = @idVENTAS";
+                MySqlCommand cm = new MySqlCommand(sql, conexion);
+                cm.Parameters.AddWithValue("idVENTAS", idventa);
+                cm.ExecuteNonQuery();
+
+                MessageBox.Show("Se elimino la venta correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo eliminar la venta ", ex.Message);
+            }
+            conexion.Close();
         }
 
         public static List<ReporteVentas> ReporteMVentas()

@@ -12,9 +12,17 @@ namespace Sistema_Inventario_Contable_GPS
 {
     public partial class VentanaNuevaVenta : Form
     {
+        string idVenta;
         public VentanaNuevaVenta()
         {
             InitializeComponent();
+        }
+
+        private void btninsertar_Click(object sender, EventArgs e)
+        {
+            VentanaVentaMateriaPrima ventaMateriaPrima = new VentanaVentaMateriaPrima(idVenta);
+            ventaMateriaPrima.Show();
+            dataGridView1.DataSource = Modelo.listaCompras();
         }
     }
 }

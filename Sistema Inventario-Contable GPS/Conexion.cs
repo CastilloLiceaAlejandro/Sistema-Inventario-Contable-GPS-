@@ -21,8 +21,8 @@ namespace Sistema_Inventario_Contable_GPS
             string password = "123456";
 
             //bases de datos solo desmarcar la suya
-            //string bd = "gddds"; 
-            string bd = "sistemacontable";
+            string bd = "gddds"; 
+            //string bd = "sistemacontable";
 
 
             string cadenaConexion = "server=" + servidor + "; port=" + puerto + "; user id=" + usuario + "; password=" + password + "; database=" + bd;
