@@ -135,22 +135,10 @@ namespace Sistema_Inventario_Contable_GPS
             VentanaMovimientosSalidasAlmacen frm = new VentanaMovimientosSalidasAlmacen();
             frm.Visible = true;
         }
-
-        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            VentanaMovimientosRepisa frm = new VentanaMovimientosRepisa();
-            frm.Visible = true;
-        }
-
+   
         private void materiaPrimaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VentanaCatalogoMateriaPrima frm = new VentanaCatalogoMateriaPrima();
-            frm.Visible = true;
-        }
-
-        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            VentanaCatalogoProducto frm = new VentanaCatalogoProducto();
             frm.Visible = true;
         }
 

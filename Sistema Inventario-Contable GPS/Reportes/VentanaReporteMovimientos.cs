@@ -15,6 +15,30 @@ namespace Sistema_Inventario_Contable_GPS
         public VentanaReporteMovimientos()
         {
             InitializeComponent();
+            dataGridViewCompras.DataSource = Modelo.ReporteMCompras();
+            dataGridViewVentas.DataSource = Modelo.ReporteMVentas();
+            dataGridViewEntradas.DataSource = Modelo.ReporteMAlmacenE();
+            dataGridViewSalidas.DataSource = Modelo.ReporteMAlmacenS();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewCompras.DataSource = Modelo.ReporteMCompras();
+        }
+
+        private void dataGridViewVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewVentas.DataSource = Modelo.ReporteMVentas();
+        }
+
+        private void dataGridViewEntradas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewEntradas.DataSource = Modelo.ReporteMAlmacenE();
+        }
+
+        private void dataGridViewSalidas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridViewSalidas.DataSource = Modelo.ReporteMAlmacenS();
         }
     }
 }

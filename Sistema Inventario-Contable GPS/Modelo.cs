@@ -445,5 +445,92 @@ namespace Sistema_Inventario_Contable_GPS
             }
             conexion.Close();
         }
+
+        public static List<ReporteCompras> ReporteMCompras()
+        {
+            List<ReporteCompras> lista = new List<ReporteCompras>();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idCOMPRAS, fechaCOMPRAS, totalCOMPRAS, facturaCOMPRAS, idEmpleados from compras";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            reader = comando.ExecuteReader();
+            ReporteCompras comp = new ReporteCompras();
+            while (reader.Read())
+            {
+                comp.idCOMPRAS = reader.GetInt32(0);
+                comp.fechaCOMPRAS = reader.GetDateTime(1);
+                comp.totalCOMPRAS = reader.GetInt32(2);
+                comp.facturaCOMPRAS = reader.GetString(3);
+                comp.idEmpleado = reader.GetInt32(4);
+            }
+            conexion.Close();
+            return lista;
+        }
+
+        public static List<ReporteVentas> ReporteMVentas()
+        {
+            List<ReporteVentas> lista = new List<ReporteVentas>();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idVENTAS, fechaVENTAS, totalVENTAS, idEmpleado from ventas";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            reader = comando.ExecuteReader();
+            ReporteVentas vent = new ReporteVentas();
+            while (reader.Read())
+            {
+                vent.idVENTAS = reader.GetInt32(0);
+                vent.fechaVENTAS = reader.GetDateTime(1);
+                vent.totalVENTAS = reader.GetInt32(2);
+                vent.idEmpleado = reader.GetInt32(3);
+            }
+            conexion.Close();
+            return lista;
+        }
+
+        public static List<ReporteAlmacenE> ReporteMAlmacenE()
+        {
+            List<ReporteAlmacenE> lista = new List<ReporteAlmacenE>();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idEntrada, fechaEntrada, idEmpleado from entradas";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            reader = comando.ExecuteReader();
+            ReporteAlmacenE E = new ReporteAlmacenE();
+            while (reader.Read())
+            {
+                E.idEntrada = reader.GetInt32(0);
+                E.fechaEntrada = reader.GetDateTime(1);
+                E.idEmpleado = reader.GetInt32(2);
+            }
+            conexion.Close();
+            return lista;
+        }
+
+        public static List<ReporteAlmacenS> ReporteMAlmacenS()
+        {
+            List<ReporteAlmacenS> lista = new List<ReporteAlmacenS>();
+            MySqlDataReader reader;
+            MySqlConnection conexion = Conexion.getConexion();
+            conexion.Open();
+
+            string sql = "SELECT idEntrada, fechaEntrada, idEmpleado from entradas";
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            reader = comando.ExecuteReader();
+            ReporteAlmacenS S = new ReporteAlmacenS();
+            while (reader.Read())
+            {
+                S.idSalida = reader.GetInt32(0);
+                S.fechaSalida = reader.GetDateTime(1);
+                S.idEmpleado = reader.GetInt32(2);
+            }
+            conexion.Close();
+            return lista;
+        }
     }
 }
